@@ -3,8 +3,14 @@
 
 #include "movie.h"
 
-class ComedyMovie : Movie {
+class ComedyMovieFactory : public MovieFactory {
+public:
+  Movie *makeMovie() const override;
+};
+
+class ComedyMovie : public Movie {
 private:
+  static ComedyMovieFactory factory;
 public:
   ComedyMovie();
 };

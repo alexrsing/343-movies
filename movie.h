@@ -4,6 +4,11 @@
 #include <iostream>
 #include <string>
 
+class MovieFactory {
+public:
+  virtual Movie *makeMovie() const = 0;
+};
+
 class Movie {
 private:
   std::string name;
