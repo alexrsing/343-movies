@@ -1,0 +1,22 @@
+#ifndef MOVIE_H
+#define MOVIE_H
+
+#include <iostream>
+#include <string>
+
+class Movie {
+private:
+  std::string name;
+  std::string genre;
+  std::string director;
+  int stock;
+  int year;
+
+public:
+  std::string getName() const;
+  std::string getGenre() const;
+  std::string getDirector() const;
+  int getStock() const;
+  int getYear() const;
+};
+#endif
