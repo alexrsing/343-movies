@@ -12,6 +12,10 @@ private:
   int stock;
   int year;
 
+  bool increaseStock();
+  bool decreaseStock();
+  bool isAvailable() const;
+
 public:
   std::string getName() const;
   std::string getGenre() const;
