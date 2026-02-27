@@ -3,7 +3,7 @@
 
 bool MovieStore::returnMovie(Customer *customer, Movie *movie) {
   // Check if the customer exists in the customers hash table
-  if (!customers.contains(std::to_string(customer->getID()))) {
+  if (!customers.contains(customer->getID())) {
     // throw runtime error if customer does not exist
     throw std::runtime_error("Customer not found");
   }
@@ -29,7 +29,7 @@ bool MovieStore::returnMovie(Customer *customer, Movie *movie) {
 
 bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
   // Check if the customer exists in the customers hash table
-  if (!customers.contains(std::to_string(customer->getID()))) {
+  if (!customers.contains(customer->getID())) {
     // throw runtime error if customer does not exist
     throw std::runtime_error("Customer not found");
   }
@@ -76,7 +76,7 @@ void MovieStore::printInventory() {
 }
 
 /**
- * Populates this movieStore objects inventory with movie data from specified
+ * Populates this movieStore object inventory with movie data from specified
  * file.
  */
 void MovieStore::populateInventory(std::string filePath) {
@@ -108,6 +108,10 @@ void MovieStore::populateInventory(std::string filePath) {
   inputFile.close();
 }
 
+/**
+ * Populates this movieStore object customers with movie data from specified
+ * file.
+ */
 void MovieStore::populateCustomers(std::string filePath) {
   std::ifstream inputFile;
 
@@ -122,7 +126,38 @@ void MovieStore::populateCustomers(std::string filePath) {
   std::string data;
   while (inputFile >> data) {
     Customer *customer = Customer::factory.makeCustomer(data);
-    customers.insert(std::to_string(customer->getID()), customer);
+    customers.insert(customer->getID(), customer);
+  }
+
+  inputFile.close();
+}
+
+/**
+ * Populates this movieStore object commands with movie data from specified
+ * file.
+ */
+void MovieStore::populateCommands(std::string filePath) {
+  std::ifstream inputFile;
+
+  // Open the file
+  inputFile.open(filePath);
+
+  // Check if the file opened successfully
+  if (!inputFile.is_open()) {
+    throw std::runtime_error("File cannot be opened");
+  }
+
+  std::string data;
+  while (inputFile >> data) {
+    char commandType = data.at(0);
+    // confirm that command type exists in commandFactories hash table - discard
+    // line if doesn't exist
+    if (!commandFactories.contains(commandType)) {
+      continue;
+    }
+    CommandFactory *factory = commandFactories.get(commandType);
+    Command *command = factory->createCommand(data);
+    commands.insert(commandType, command);
   }
 
   inputFile.close();

@@ -17,12 +17,14 @@ public:
 
   void populateInventory(std::string filePath);
   void populateCustomers(std::string filePath);
+  void populateCommands(std::string filePath);
 
 private:
   MyHashTable<char, MovieFactory *> movieFactories;
+  MyHashTable<char, CommandFactory *> commandFactories;
   MyHashTable<char, std::vector<Movie *>> inventory;
-  MyHashTable<std::string, Customer *> customers;
-  MyHashTable<std::string, Command *> commands;
+  MyHashTable<int, Customer *> customers;
+  MyHashTable<char, Command *> commands;
 };
 
 #endif
