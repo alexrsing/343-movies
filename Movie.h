@@ -22,6 +22,7 @@ public:
         int year)
       : title(title), director(director), genre(genre), stock(stock),
         year(year) {};
+
   std::string getTitle() const;
   std::string getDirector() const;
   char getGenre() const;

@@ -15,7 +15,8 @@ public:
   bool borrowMovie(Customer *customer, Movie *movie);
   void printInventory();
 
-  void populateInventory(std::string filePath); // reads file
+  void populateInventory(std::string filePath);
+  void populateCustomers(std::string filePath);
 
 private:
   MyHashTable<char, MovieFactory *> movieFactories;

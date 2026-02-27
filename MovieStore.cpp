@@ -107,3 +107,23 @@ void MovieStore::populateInventory(std::string filePath) {
 
   inputFile.close();
 }
+
+void MovieStore::populateCustomers(std::string filePath) {
+  std::ifstream inputFile;
+
+  // Open the file
+  inputFile.open(filePath);
+
+  // Check if the file opened successfully
+  if (!inputFile.is_open()) {
+    throw std::runtime_error("File cannot be opened");
+  }
+
+  std::string data;
+  while (inputFile >> data) {
+    Customer *customer = Customer::factory.makeCustomer(data);
+    customers.insert(std::to_string(customer->getID()), customer);
+  }
+
+  inputFile.close();
+}

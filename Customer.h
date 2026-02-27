@@ -5,11 +5,15 @@
 
 class CustomerFactory {
 public:
-  virtual Customer *makeCustomer(std::string data) const = 0;
+  Customer *makeCustomer(std::string data) const;
 };
 
 class Customer {
 public:
+  Customer(int id, std::string firstName, std::string lastName)
+      : id(id), firstName(firstName), lastName(lastName) {};
+
+  static CustomerFactory factory;
   int getID() const;
 
 private:
