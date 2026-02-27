@@ -6,26 +6,31 @@
 
 class MovieFactory {
 public:
-  virtual Movie *makeMovie() const = 0;
+  virtual Movie *makeMovie(std::string data) const = 0;
 };
 
 class Movie {
 private:
   std::string name;
-  std::string genre;
   std::string director;
+  char genre;
   int stock;
   int year;
+
+public:
+  std::string getName() const;
+  std::string getDirector() const;
+  char getGenre() const;
+  int getStock() const;
+  int getYear() const;
+
+  void printMovie() const;
 
   bool increaseStock();
   bool decreaseStock();
   bool isAvailable() const;
 
-public:
-  std::string getName() const;
-  std::string getGenre() const;
-  std::string getDirector() const;
-  int getStock() const;
-  int getYear() const;
+  virtual void print() const = 0;
+  virtual bool isEqual(const Movie &other) const = 0;
 };
 #endif
