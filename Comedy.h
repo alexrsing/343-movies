@@ -8,12 +8,13 @@ public:
   Movie *makeMovie(std::string data) const override;
 };
 
-class ComedyMovie : public Movie {
+class Comedy : public Movie {
 private:
   static ComedyMovieFactory factory;
 
 public:
-  ComedyMovie(int stock, std::string director, std::string title, int year);
+  Comedy(int stock, std::string director, std::string title, int year)
+      : Movie(title, director, 'F', stock, year) {};
   void print() const override;
   bool isEqual(const Movie &other) const override;
 };

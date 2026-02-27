@@ -11,20 +11,22 @@ public:
 
 class Movie {
 private:
-  std::string name;
+  std::string title;
   std::string director;
   char genre;
   int stock;
   int year;
 
 public:
-  std::string getName() const;
+  Movie(std::string title, std::string director, char genre, int stock,
+        int year)
+      : title(title), director(director), genre(genre), stock(stock),
+        year(year) {};
+  std::string getTitle() const;
   std::string getDirector() const;
   char getGenre() const;
   int getStock() const;
   int getYear() const;
-
-  void printMovie() const;
 
   bool increaseStock();
   bool decreaseStock();

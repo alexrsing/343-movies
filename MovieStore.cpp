@@ -61,17 +61,17 @@ void MovieStore::printInventory() {
   // Prints movies in a specific order
   std::vector<Movie *> movies = inventory.get('F');
   for (const Movie *movie : movies) {
-    movie->printMovie();
+    movie->print();
   }
 
   std::vector<Movie *> movies = inventory.get('D');
   for (const Movie *movie : movies) {
-    movie->printMovie();
+    movie->print();
   }
 
   std::vector<Movie *> movies = inventory.get('C');
   for (const Movie *movie : movies) {
-    movie->printMovie();
+    movie->print();
   }
 }
 
@@ -96,6 +96,13 @@ void MovieStore::populateInventory(std::string filePath) {
     char genre = data.at(0);
     MovieFactory *factory = movieFactories.get(genre);
     Movie *movie = factory->makeMovie(data);
+
+    // add movie to inventory
+    if (inventory.contains(genre)) {
+      inventory.get(genre).push_back(movie);
+    } else {
+      inventory.insert(genre, std::vector<Movie *>{movie});
+    }
   }
 
   inputFile.close();
