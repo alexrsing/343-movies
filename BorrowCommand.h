@@ -12,8 +12,12 @@ public:
 
 class BorrowCommand : public Command {
 public:
-  BorrowCommand(int customerID, const std::string mediaType,
-                const std::string movieType);
+  BorrowCommand(int customerID, std::string mediaType,
+                std::string movieType);
+private:
+  int customerID;
+  std::string mediaType;
+  std::string movieType;
 };
 
 #endif

@@ -17,4 +17,7 @@ Command *BorrowCommandFactory::createCommand(std::string data) const {
 BorrowCommand::BorrowCommand(int customerID, const std::string mediaType,
                              const std::string movieType) {
   // initialize BorrowCommand object with constructor parameters
+  (void)customerID;
+  (void)mediaType;
+  (void)movieType;
 }
