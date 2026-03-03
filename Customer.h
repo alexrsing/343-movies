@@ -3,6 +3,8 @@
 
 #include <string>
 
+class Customer;
+
 class CustomerFactory {
 public:
   Customer *makeCustomer(std::string data) const;

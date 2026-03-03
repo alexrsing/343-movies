@@ -3,6 +3,8 @@
 #include <sstream>
 #include <vector>
 
+CustomerFactory Customer::factory;
+
 Customer *CustomerFactory::makeCustomer(std::string data) const {
   // parse data and set customer fields
   int id;

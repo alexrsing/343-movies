@@ -3,6 +3,8 @@
 
 #include <string>
 
+class Command;
+
 class CommandFactory {
 public:
   virtual Command *createCommand(std::string data) const = 0;
