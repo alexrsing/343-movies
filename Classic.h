@@ -1,20 +1,38 @@
 #ifndef CLASSIC_H
 #define CLASSIC_H
 
-#include "movie.h"
+#include "Movie.h"
+
+class ClassicMovieFactory : public MovieFactory {
+public:
+  Movie *makeMovie(std::string data) const override;
+};
 
 class Classic : public Movie {
-    private:
-    std::string actorFirst;
-    std::string actorLast;
-    int month;
+private:
+  static ClassicMovieFactory factory;
 
-    public:
-    Classic(int stock, const std::string name, std::string director, int year, int month, std::string actorFirst, std::string actorLast);
+  std::string actorFirst;
+  std::string actorLast;
+  int month;
 
-    void print() const override;
-    bool isEqual(const Movie& other) const override;
+public:
+  Classic(int stock,
+          std::string director,
+          std::string title,
+          std::string actorFirst,
+          std::string actorLast,
+          int month,
+          int year)
+      : Movie(title, director, 'C', stock, year),
+        actorFirst(actorFirst),
+        actorLast(actorLast),
+        month(month) {}
 
-    int getMonth() const;
+  void print() const override;
+  bool isEqual(const Movie &other) const override;
 
+  int getMonth() const;
 };
+
+#endif

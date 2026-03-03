@@ -1,38 +1,64 @@
 #include "Classic.h"
+#include <sstream>
 
-Classic::Classic(int stock,
-                 const std::string& director,
-                 const std::string& title,
-                 const std::string& actorFirst,
-                 const std::string& actorLast,
-                 int month,
-                 int year)
-    : Movie(stock, director, title, year),
-      actorFirst(actorFirst),
-      actorLast(actorLast),
-      month(month) {}
+Movie *ClassicMovieFactory::makeMovie(std::string data) const {
+  // format:
+  // C, stock, director, title, actorFirst actorLast month year
 
-void Classic::print() const {
-    std::cout << "Classic: "
-              << stock << ", "
-              << director << ", "
-              << title << ", "
-              << actorFirst << " "
-              << actorLast << " "
-              << month << " "
-              << year << std::endl;
+  size_t pos = data.find(',');
+
+  size_t start = pos + 2;
+  pos = data.find(',', start);
+  int stock = std::stoi(data.substr(start, pos - start));
+
+  start = pos + 2;
+  pos = data.find(',', start);
+  std::string director = data.substr(start, pos - start);
+
+  start = pos + 2;
+  pos = data.find(',', start);
+  std::string title = data.substr(start, pos - start);
+
+  start = pos + 2;
+  std::string remaining = data.substr(start);
+
+  std::stringstream ss(remaining);
+
+  std::string actorFirst;
+  std::string actorLast;
+  int month;
+  int year;
+
+  ss >> actorFirst >> actorLast >> month >> year;
+
+  return new Classic(stock, director, title,
+                     actorFirst, actorLast,
+                     month, year);
 }
 
-bool Classic::isEqual(const Movie* other) const {
-    const Classic* otherClassic = dynamic_cast<const Classic*>(other);
-    if (otherClassic == nullptr) return false;
+void Classic::print() const {
+  std::cout << "Classic: " << getStock() << ", "
+            << getDirector() << ", "
+            << getTitle() << ", "
+            << actorFirst << " "
+            << actorLast << " "
+            << month << " "
+            << getYear() << std::endl;
+}
 
-    return (month == otherClassic->month &&
-            year == otherClassic->year &&
-            actorFirst == otherClassic->actorFirst &&
-            actorLast == otherClassic->actorLast);
+bool Classic::isEqual(const Movie &other) const {
+  if (getGenre() != other.getGenre()) {
+    return false;
+  }
+
+  const Classic &otherClassic = static_cast<const Classic &>(other);
+
+  return getYear() == otherClassic.getYear() &&
+         month == otherClassic.month &&
+         actorFirst == otherClassic.actorFirst &&
+         actorLast == otherClassic.actorLast;
 }
 
 int Classic::getMonth() const {
-    return month;
+  return month;
 }

@@ -1,15 +1,23 @@
 #ifndef DRAMA_H
 #define DRAMA_H
 
-#include "movie.h"
+#include "Movie.h"
+
+class DramaMovieFactory : public MovieFactory {
+public:
+  Movie *makeMovie(std::string data) const override;
+};
 
 class Drama : public Movie {
-    public:
-    Drama(int stock, const std::string name, std::string director, int year);
+private:
+  static DramaMovieFactory factory;
 
-    void print() const override;
-    bool isEqual(const Movie& other) const override;
+public:
+  Drama(int stock, std::string director, std::string title, int year)
+      : Movie(title, director, 'D', stock, year) {}
 
+  void print() const override;
+  bool isEqual(const Movie &other) const override;
 };
 
 #endif
