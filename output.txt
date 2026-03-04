@@ -1,20 +1,10 @@
-Tue Mar  3 23:38:29 UTC 2026
+Wed Mar  4 00:09:39 UTC 2026
 Linux LinuxMachine 6.10.14-linuxkit #1 SMP Wed Sep 10 06:47:45 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
 uid=1000(cssuwbstudent) gid=1000(cssuwbstudent) groups=1000(cssuwbstudent),10(wheel)
 =====================================================
 1. Compiles without warnings with -Wall -Wextra flags
    FIX all warnings if there are any shown below
 =====================================================
-BorrowCommand.cpp: In constructor ‘BorrowCommand::BorrowCommand(int, std::string, std::string)’:
-BorrowCommand.cpp:17:34: warning: unused parameter ‘customerID’ [-Wunused-parameter]
-   17 | BorrowCommand::BorrowCommand(int customerID, const std::string mediaType,
-      |                              ~~~~^~~~~~~~~~
-BorrowCommand.cpp:17:64: warning: unused parameter ‘mediaType’ [-Wunused-parameter]
-   17 | BorrowCommand::BorrowCommand(int customerID, const std::string mediaType,
-      |                                              ~~~~~~~~~~~~~~~~~~^~~~~~~~~
-BorrowCommand.cpp:18:48: warning: unused parameter ‘movieType’ [-Wunused-parameter]
-   18 |                              const std::string movieType) {
-      |                              ~~~~~~~~~~~~~~~~~~^~~~~~~~~
 =====================================================
 2. Runs and produces correct output
    FIX any issues if the tests below do not pass
@@ -33,148 +23,38 @@ Done.
    FIX all warnings if there are any shown below
 =====================================================
 [1/10] Processing file /home/cssuwbstudent/roshia3/343-movies/BorrowCommand.cpp.
-11581 warnings generated.
+11579 warnings generated.
 [2/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Classic.cpp.
-23164 warnings generated.
+23162 warnings generated.
 [3/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Comedy.cpp.
-34474 warnings generated.
+34472 warnings generated.
 [4/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Command.cpp.
-34474 warnings generated.
+34472 warnings generated.
 [5/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Customer.cpp.
-47494 warnings generated.
+47491 warnings generated.
 [6/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Drama.cpp.
-58804 warnings generated.
+58801 warnings generated.
 [7/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Movie.cpp.
-70114 warnings generated.
+70111 warnings generated.
 [8/10] Processing file /home/cssuwbstudent/roshia3/343-movies/MovieStore.cpp.
-84282 warnings generated.
+87944 warnings generated.
 [9/10] Processing file /home/cssuwbstudent/roshia3/343-movies/main.cpp.
-95592 warnings generated.
+99254 warnings generated.
 [10/10] Processing file /home/cssuwbstudent/roshia3/343-movies/store_test.cpp.
-109993 warnings generated.
-/home/cssuwbstudent/roshia3/343-movies/BorrowCommand.h:15:33: error: parameter 'mediaType' is const-qualified in the function declaration; const-qualification of parameters only has an effect in function definitions [readability-avoid-const-params-in-decls,-warnings-as-errors]
-   15 |   BorrowCommand(int customerID, const std::string mediaType,
-      |                                 ^~~~~
-/home/cssuwbstudent/roshia3/343-movies/BorrowCommand.h:16:17: error: parameter 'movieType' is const-qualified in the function declaration; const-qualification of parameters only has an effect in function definitions [readability-avoid-const-params-in-decls,-warnings-as-errors]
-   16 |                 const std::string movieType);
-      |                 ^~~~~
-/home/cssuwbstudent/roshia3/343-movies/Customer.cpp:8:28: error: method 'makeCustomer' can be made static [readability-convert-member-functions-to-static,-warnings-as-errors]
-    8 | Customer *CustomerFactory::makeCustomer(std::string data) const {
-      |                            ^                              ~~~~~
-/home/cssuwbstudent/roshia3/343-movies/MovieStore.cpp:50:9: error: do not use 'else' after 'return' [llvm-else-after-return,readability-else-after-return,-warnings-as-errors]
-   50 |       } else {
-      |         ^~~~~~
-   51 |         m->decreaseStock();
-      |         ~~~~~~~~~~~~~~~~~~~
-   52 |         return true;
-      |         ~~~~~~~~~~~~
-   53 |       }
-      |       ~
-/home/cssuwbstudent/roshia3/343-movies/MyHashTable.h:65:3: error: replace loop by 'std::any_of()' [readability-use-anyofallof,-warnings-as-errors]
-   65 |   for (const auto &node : bucket) {
-      |   ^
-Suppressed 109984 warnings (109984 in non-user code).
+113655 warnings generated.
+Suppressed 113655 warnings (113655 in non-user code).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
-5 warnings treated as errors
 =====================================================
 4. Checking formatting using clang-format tool
    FIX all formatting issues if there are any shown below
 =====================================================
 Running clang-format on ./BorrowCommand.cpp
-7,9c7,9
-<     int customerID;
-<     std::string mediaType;
-<     std::string movieType;
----
->   int customerID;
->   std::string mediaType;
->   std::string movieType;
-11c11
-<     iss >> customerID >> mediaType >> movieType;
----
->   iss >> customerID >> mediaType >> movieType;
-13,14c13,14
-<     // Return a new BorrowCommand object
-<     return new BorrowCommand(customerID, mediaType, movieType);
----
->   // Return a new BorrowCommand object
->   return new BorrowCommand(customerID, mediaType, movieType);
 Running clang-format on ./Classic.cpp
-34,36c34,35
-<   return new Classic(stock, director, title,
-<                      actorFirst, actorLast,
-<                      month, year);
----
->   return new Classic(stock, director, title, actorFirst, actorLast, month,
->                      year);
-40,46c39,41
-<   std::cout << "Classic: " << getStock() << ", "
-<             << getDirector() << ", "
-<             << getTitle() << ", "
-<             << actorFirst << " "
-<             << actorLast << " "
-<             << month << " "
-<             << getYear() << std::endl;
----
->   std::cout << "Classic: " << getStock() << ", " << getDirector() << ", "
->             << getTitle() << ", " << actorFirst << " " << actorLast << " "
->             << month << " " << getYear() << std::endl;
-56,57c51
-<   return getYear() == otherClassic.getYear() &&
-<          month == otherClassic.month &&
----
->   return getYear() == otherClassic.getYear() && month == otherClassic.month &&
-62,64c56
-< int Classic::getMonth() const {
-<   return month;
-< }
-\ No newline at end of file
----
-> int Classic::getMonth() const { return month; }
-\ No newline at end of file
 Running clang-format on ./Comedy.cpp
 Running clang-format on ./Command.cpp
 Running clang-format on ./Customer.cpp
 Running clang-format on ./Drama.cpp
-27,30c27,28
-<   std::cout << "Drama: " << getStock() << ", "
-<             << getDirector() << ", "
-<             << getTitle() << ", "
-<             << getYear() << std::endl;
----
->   std::cout << "Drama: " << getStock() << ", " << getDirector() << ", "
->             << getTitle() << ", " << getYear() << std::endl;
 Running clang-format on ./Movie.cpp
-5,7c5
-< std::string Movie::getTitle() const {
-<     return title;
-< }
----
-> std::string Movie::getTitle() const { return title; }
-9,11c7
-< std::string Movie::getDirector() const {
-<     return director;
-< }
----
-> std::string Movie::getDirector() const { return director; }
-13,15c9
-< char Movie::getGenre() const {
-<     return genre;
-< }
----
-> char Movie::getGenre() const { return genre; }
-17,19c11
-< int Movie::getStock() const {
-<     return stock;
-< }
----
-> int Movie::getStock() const { return stock; }
-21,23c13
-< int Movie::getYear() const {
-<     return year;
-< }
----
-> int Movie::getYear() const { return year; }
 Running clang-format on ./MovieStore.cpp
 Running clang-format on ./main.cpp
 Running clang-format on ./store_test.cpp
@@ -187,22 +67,22 @@ Running clang-format on ./store_test.cpp
     If you get a message saying "definitely lost", fix it
     If you get a message saying "All heap blocks were freed -- no leaks are possible", you are good
 =====================================================
-==424== Memcheck, a memory error detector
-==424== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==424== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==424== Command: ./a.out
-==424== Parent PID: 322
-==424== 
-==424== 
-==424== HEAP SUMMARY:
-==424==     in use at exit: 0 bytes in 0 blocks
-==424==   total heap usage: 6 allocs, 6 frees, 85,515 bytes allocated
-==424== 
-==424== All heap blocks were freed -- no leaks are possible
-==424== 
-==424== For lists of detected and suppressed errors, rerun with: -s
-==424== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Tue Mar  3 23:38:40 UTC 2026
+==1114== Memcheck, a memory error detector
+==1114== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==1114== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==1114== Command: ./a.out
+==1114== Parent PID: 1012
+==1114== 
+==1114== 
+==1114== HEAP SUMMARY:
+==1114==     in use at exit: 0 bytes in 0 blocks
+==1114==   total heap usage: 6 allocs, 6 frees, 85,515 bytes allocated
+==1114== 
+==1114== All heap blocks were freed -- no leaks are possible
+==1114== 
+==1114== For lists of detected and suppressed errors, rerun with: -s
+==1114== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Wed Mar  4 00:09:50 UTC 2026
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command

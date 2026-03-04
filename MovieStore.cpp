@@ -47,10 +47,10 @@ bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
       if (m->getStock() <= 0) {
         std::cout << "Movie is out of stock" << std::endl;
         return false;
-      } else {
-        m->decreaseStock();
-        return true;
       }
+
+      m->decreaseStock();
+      return true;
     }
   }
   std::cout << "Movie not found" << std::endl;
@@ -129,7 +129,7 @@ void MovieStore::populateCustomers(std::string filePath) {
 
   std::string data;
   while (inputFile >> data) {
-    Customer *customer = Customer::factory.makeCustomer(data);
+    Customer *customer = CustomerFactory::makeCustomer(data);
     customers.insert(customer->getID(), customer);
   }
 

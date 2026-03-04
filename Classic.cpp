@@ -31,19 +31,14 @@ Movie *ClassicMovieFactory::makeMovie(std::string data) const {
 
   ss >> actorFirst >> actorLast >> month >> year;
 
-  return new Classic(stock, director, title,
-                     actorFirst, actorLast,
-                     month, year);
+  return new Classic(stock, director, title, actorFirst, actorLast, month,
+                     year);
 }
 
 void Classic::print() const {
-  std::cout << "Classic: " << getStock() << ", "
-            << getDirector() << ", "
-            << getTitle() << ", "
-            << actorFirst << " "
-            << actorLast << " "
-            << month << " "
-            << getYear() << std::endl;
+  std::cout << "Classic: " << getStock() << ", " << getDirector() << ", "
+            << getTitle() << ", " << actorFirst << " " << actorLast << " "
+            << month << " " << getYear() << std::endl;
 }
 
 bool Classic::isEqual(const Movie &other) const {
@@ -53,12 +48,9 @@ bool Classic::isEqual(const Movie &other) const {
 
   const Classic &otherClassic = static_cast<const Classic &>(other);
 
-  return getYear() == otherClassic.getYear() &&
-         month == otherClassic.month &&
+  return getYear() == otherClassic.getYear() && month == otherClassic.month &&
          actorFirst == otherClassic.actorFirst &&
          actorLast == otherClassic.actorLast;
 }
 
-int Classic::getMonth() const {
-  return month;
-}
+int Classic::getMonth() const { return month; }

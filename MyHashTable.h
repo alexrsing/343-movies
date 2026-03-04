@@ -1,7 +1,10 @@
 #ifndef MYHASHTABLE_H
 #define MYHASHTABLE_H
 
+#include <algorithm>
+#include <functional>
 #include <list>
+#include <stdexcept>
 #include <vector>
 
 template <typename K, typename V> class MyHashTable {
@@ -49,10 +52,9 @@ template <typename K, typename V> V &MyHashTable<K, V>::get(const K &key) {
 template <typename K, typename V>
 bool MyHashTable<K, V>::insert(const K &key, V v) {
   std::list<HashNode> &bucket = buckets[std::hash<K>{}(key) % buckets.size()];
-  for (const auto &node : bucket) {
-    if (node.key == key) {
-      return false;
-    }
+  if (std::any_of(bucket.begin(), bucket.end(),
+                  [&](const HashNode &node) { return node.key == key; })) {
+    return false;
   }
   bucket.emplace_back(key, v);
   return true;
@@ -62,24 +64,20 @@ template <typename K, typename V>
 bool MyHashTable<K, V>::contains(const K &key) const {
   const std::list<HashNode> &bucket =
       buckets[std::hash<K>{}(key) % buckets.size()];
-  for (const auto &node : bucket) {
-    if (node.key == key) {
-      return true;
-    }
-  }
-  return false;
+  return std::any_of(bucket.begin(), bucket.end(),
+                     [&](const HashNode &node) { return node.key == key; });
 }
 
 template <typename K, typename V>
 bool MyHashTable<K, V>::remove(const K &key, V v) {
   std::list<HashNode> &bucket = buckets[std::hash<K>{}(key) % buckets.size()];
-    for (auto it = bucket.begin(); it != bucket.end(); ++it) {
-        if (it->key == key) {
-            bucket.erase(it);
-            return true;
-        }
+  for (auto it = bucket.begin(); it != bucket.end(); ++it) {
+    if (it->key == key) {
+      bucket.erase(it);
+      return true;
     }
-    return false;
+  }
+  return false;
 }
 
 #endif

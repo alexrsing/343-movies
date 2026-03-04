@@ -7,7 +7,7 @@ class Customer;
 
 class CustomerFactory {
 public:
-  Customer *makeCustomer(std::string data) const;
+  static Customer *makeCustomer(std::string data);
 };
 
 class Customer {

@@ -17,17 +17,10 @@ private:
   int month;
 
 public:
-  Classic(int stock,
-          std::string director,
-          std::string title,
-          std::string actorFirst,
-          std::string actorLast,
-          int month,
-          int year)
-      : Movie(title, director, 'C', stock, year),
-        actorFirst(actorFirst),
-        actorLast(actorLast),
-        month(month) {}
+  Classic(int stock, std::string director, std::string title,
+          std::string actorFirst, std::string actorLast, int month, int year)
+      : Movie(title, director, 'C', stock, year), actorFirst(actorFirst),
+        actorLast(actorLast), month(month) {}
 
   void print() const override;
   bool isEqual(const Movie &other) const override;
