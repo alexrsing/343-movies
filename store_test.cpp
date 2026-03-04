@@ -36,6 +36,13 @@ void testStore1() {
 
 void testStore2() {
   cout << "Start testStore2" << endl;
+  MovieStore store;
+  store.populateInventory("data4movies.txt");
+  store.populateCustomers("data4customers.txt");
+  store.populateCommands("data4commands.txt");
+
+  // store.printInventory();
+
   cout << "End testStore2" << endl;
 }
 

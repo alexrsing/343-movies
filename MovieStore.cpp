@@ -111,7 +111,10 @@ void MovieStore::populateInventory(std::string filePath) {
   }
 
   std::string data;
-  while (inputFile >> data) {
+  while (std::getline(inputFile, data)) {
+    if (data.empty()) {
+      continue;
+    }
     // Read first char (genre) of data
     char genre = data.at(0);
 
@@ -148,7 +151,10 @@ void MovieStore::populateCustomers(std::string filePath) {
   }
 
   std::string data;
-  while (inputFile >> data) {
+  while (std::getline(inputFile, data)) {
+    if (data.empty()) {
+      continue;
+    }
     Customer *customer = CustomerFactory::makeCustomer(data);
     customers.insert(customer->getID(), customer);
   }
@@ -168,7 +174,14 @@ Customer *MovieStore::getCustomer(int id) {
 }
 
 std::vector<Movie *> &MovieStore::getMovies(char genre) {
-  return inventory.get(genre);
+  try {
+    return inventory.get(genre);
+  } catch (const std::runtime_error &e) {
+    std::cout << "Genre " << genre << " not found in inventory" << std::endl;
+    // if genre does not exist, return empty vector
+    static std::vector<Movie *> empty;
+    return empty;
+  }
 }
 
 void MovieStore::populateCommands(std::string filePath) {
@@ -183,7 +196,10 @@ void MovieStore::populateCommands(std::string filePath) {
   }
 
   std::string data;
-  while (inputFile >> data) {
+  while (std::getline(inputFile, data)) {
+    if (data.empty()) {
+      continue;
+    }
     char commandType = data.at(0);
     // confirm that command type exists in commandFactories hash table - discard
     // line if doesn't exist

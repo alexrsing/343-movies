@@ -9,7 +9,12 @@ BorrowCommandFactory::BorrowCommandFactory() {}
 Command *BorrowCommandFactory::createCommand(std::string data,
                                              MovieStore *store) const {
   // parse data from input string into BorrowCommand constructor parameters
-  std::istringstream iss(data);
+  // skip command type character at start of line
+  if (data.length() < 2) {
+    std::cout << "Invalid borrow command data: " << data << std::endl;
+    return nullptr;
+  }
+  std::istringstream iss(data.substr(2));
   int customerID;
   std::string mediaType;
   char movieType;

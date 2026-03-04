@@ -9,7 +9,12 @@ ReturnCommandFactory::ReturnCommandFactory() {}
 Command *ReturnCommandFactory::createCommand(std::string data,
                                              MovieStore *store) const {
   // parse data from input string into ReturnCommand constructor parameters
-  std::istringstream iss(data);
+  // skip command type character at start of line
+  if (data.length() < 2) {
+    std::cout << "Invalid return command data: " << data << std::endl;
+    return nullptr;
+  }
+  std::istringstream iss(data.substr(2));
   int customerID;
   std::string mediaType;
   char movieType;
