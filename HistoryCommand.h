@@ -11,13 +11,12 @@ public:
 
 class HistoryCommand : public Command {
 public:
-  HistoryCommand(MovieStore *store, Customer *customer, Movie *movie)
-      : Command(store), customer(customer), movie(movie) {}
+  HistoryCommand(MovieStore *store, Customer *customer)
+      : Command(store), customer(customer) {}
   void execute() override;
 
 private:
   Customer *customer;
-  Movie *movie;
 };
 
 #endif

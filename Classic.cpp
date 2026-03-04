@@ -53,4 +53,18 @@ bool Classic::isEqual(const Movie &other) const {
          actorLast == otherClassic.actorLast;
 }
 
+bool Classic::isEqual(const std::string data) const {
+  // expected format: " month year actorFirst actorLast"
+  std::istringstream iss(data);
+  int m;
+  int y;
+  std::string aFirst;
+  std::string aLast;
+
+  iss >> m >> y >> aFirst >> aLast;
+
+  return month == m && getYear() == y && actorFirst == aFirst &&
+         actorLast == aLast;
+}
+
 int Classic::getMonth() const { return month; }

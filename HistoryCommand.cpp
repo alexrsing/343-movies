@@ -1,4 +1,5 @@
 #include "HistoryCommand.h"
+#include <iostream>
 #include <sstream>
 
 // Factory constructor
@@ -9,14 +10,8 @@ Command *HistoryCommandFactory::createCommand(std::string data,
   // parse data from input string into BorrowCommand constructor parameters
   std::istringstream iss(data);
   int customerID;
-  std::string mediaType;
-  char movieType;
 
-  iss >> customerID >> mediaType >> movieType;
-
-  // Capture the remaining movie-identifying data
-  std::string movieData;
-  std::getline(iss, movieData);
+  iss >> customerID;
 
   // Use store parameter to look up movie and customer
   Customer *customer = store->getCustomer(customerID);
@@ -25,16 +20,7 @@ Command *HistoryCommandFactory::createCommand(std::string data,
     return nullptr;
   }
 
-  for (Movie *movie : store->getMovies(movieType)) {
-    // if this is the correct movie, return a new BorrowCommand object
-    if (movie->isEqual(movieData)) {
-      return new HistoryCommand(store, customer, movie);
-    }
-  }
-
-  // data does not match customer or movie
-  std::cout << "Invalid history command data: " << data << std::endl;
-  return nullptr;
+  return new HistoryCommand(store, customer);
 }
 
 void HistoryCommand::execute() {

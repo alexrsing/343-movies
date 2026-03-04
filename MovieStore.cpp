@@ -172,6 +172,9 @@ void MovieStore::populateCommands(std::string filePath) {
     }
     CommandFactory *factory = commandFactories.get(commandType);
     Command *command = factory->createCommand(data, this);
+    if (command == nullptr) {
+      continue;
+    }
     commands.insert(commandType, command);
   }
 

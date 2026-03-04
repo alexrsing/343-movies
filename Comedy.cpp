@@ -38,3 +38,16 @@ bool Comedy::isEqual(const Movie &other) const {
   return getTitle() == otherComedy.getTitle() &&
          getDirector() == otherComedy.getDirector();
 }
+
+bool Comedy::isEqual(const std::string data) const {
+  // expected format: " title, year"
+  size_t pos = data.find(',');
+  if (pos == std::string::npos) {
+    return false;
+  }
+
+  std::string title = data.substr(1, pos - 1);
+  int year = std::stoi(data.substr(pos + 2));
+
+  return getTitle() == title && getYear() == year;
+}

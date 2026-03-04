@@ -27,7 +27,7 @@ private:
   MyHashTable<char, CommandFactory *> commandFactories;
   MyHashTable<char, std::vector<Movie *>> inventory;
   MyHashTable<int, Customer *> customers;
-  MyHashTable<char, Command *> commands;
+  MyHashTable<char, std::vector<Command *>> commands;
 };
 
 #endif

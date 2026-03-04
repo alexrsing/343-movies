@@ -1,4 +1,5 @@
 #include "ReturnCommand.h"
+#include <iostream>
 #include <sstream>
 
 // Factory constructor
