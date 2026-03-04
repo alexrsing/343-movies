@@ -6,12 +6,18 @@
 class ReturnCommandFactory : public CommandFactory {
 public:
   ReturnCommandFactory();
-  Command *createCommand(std::string data) const override;
+  Command *createCommand(std::string data, MovieStore *store) const override;
 };
 
 class ReturnCommand : public Command {
 public:
-  ReturnCommand();
+  ReturnCommand(MovieStore *store, Customer *customer, Movie *movie)
+      : Command(store), customer(customer), movie(movie) {}
+  void execute() override;
+
+private:
+  Customer *customer;
+  Movie *movie;
 };
 
 #endif

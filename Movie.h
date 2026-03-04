@@ -37,5 +37,6 @@ public:
 
   virtual void print() const = 0;
   virtual bool isEqual(const Movie &other) const = 0;
+  virtual bool isEqual(const std::string data) const = 0;
 };
 #endif

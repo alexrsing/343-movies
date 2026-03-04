@@ -6,12 +6,16 @@
 class InventoryCommandFactory : public CommandFactory {
 public:
   InventoryCommandFactory();
-  Command *createCommand(std::string data) const override;
+  Command *createCommand(std::string data, MovieStore *store) const override;
 };
 
 class InventoryCommand : public Command {
 public:
-  InventoryCommand();
+  InventoryCommand(MovieStore *store) : Command(store) {};
+  void execute() override;
+
+private:
+  MovieStore *store;
 };
 
 #endif

@@ -7,17 +7,18 @@
 class BorrowCommandFactory : public CommandFactory {
 public:
   BorrowCommandFactory();
-  Command *createCommand(std::string data) const override;
+  Command *createCommand(std::string data, MovieStore *store) const override;
 };
 
 class BorrowCommand : public Command {
 public:
-  BorrowCommand(int customerID, std::string mediaType, std::string movieType);
+  BorrowCommand(MovieStore *store, Customer *customer, Movie *movie)
+      : Command(store), customer(customer), movie(movie) {}
+  void execute() override;
 
 private:
-  int customerID;
-  std::string mediaType;
-  std::string movieType;
+  Customer *customer;
+  Movie *movie;
 };
 
 #endif

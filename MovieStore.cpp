@@ -140,6 +140,17 @@ void MovieStore::populateCustomers(std::string filePath) {
  * Populates this movieStore object commands with movie data from specified
  * file.
  */
+Customer *MovieStore::getCustomer(int id) {
+  if (!customers.contains(id)) {
+    return nullptr;
+  }
+  return customers.get(id);
+}
+
+std::vector<Movie *> &MovieStore::getMovies(char genre) {
+  return inventory.get(genre);
+}
+
 void MovieStore::populateCommands(std::string filePath) {
   std::ifstream inputFile;
 
@@ -160,7 +171,7 @@ void MovieStore::populateCommands(std::string filePath) {
       continue;
     }
     CommandFactory *factory = commandFactories.get(commandType);
-    Command *command = factory->createCommand(data);
+    Command *command = factory->createCommand(data, this);
     commands.insert(commandType, command);
   }
 

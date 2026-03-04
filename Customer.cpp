@@ -17,4 +17,16 @@ Customer *CustomerFactory::makeCustomer(std::string data) {
   return new Customer(id, firstName, lastName);
 }
 
-int Customer::getID() const { return this->id; }
+int Customer::getID() const {
+  //
+  return this->id;
+}
+
+void Customer::addTransaction(char key, Movie *movie) {
+  transaction[key].push_back(movie);
+}
+
+std::unordered_map<char, std::vector<Movie *>>
+Customer::getTransactions() const {
+  return transaction;
+}

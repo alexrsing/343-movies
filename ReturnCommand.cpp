@@ -1,13 +1,12 @@
-#include "BorrowCommand.h"
-#include <iostream>
+#include "ReturnCommand.h"
 #include <sstream>
 
 // Factory constructor
-BorrowCommandFactory::BorrowCommandFactory() {}
+ReturnCommandFactory::ReturnCommandFactory() {}
 
-Command *BorrowCommandFactory::createCommand(std::string data,
+Command *ReturnCommandFactory::createCommand(std::string data,
                                              MovieStore *store) const {
-  // parse data from input string into BorrowCommand constructor parameters
+  // parse data from input string into ReturnCommand constructor parameters
   std::istringstream iss(data);
   int customerID;
   std::string mediaType;
@@ -29,16 +28,16 @@ Command *BorrowCommandFactory::createCommand(std::string data,
   for (Movie *movie : store->getMovies(movieType)) {
     // if this is the correct movie, return a new BorrowCommand object
     if (movie->isEqual(movieData)) {
-      return new BorrowCommand(store, customer, movie);
+      return new ReturnCommand(store, customer, movie);
     }
   }
 
   // data does not match customer or movie
-  std::cout << "Invalid borrow command data: " << data << std::endl;
+  std::cout << "Invalid return command data: " << data << std::endl;
   return nullptr;
 }
 
-void BorrowCommand::execute() {
+void ReturnCommand::execute() {
   MovieStore *store = getStore();
 
   // the following checks should not be necessary if createCommand is
@@ -55,10 +54,8 @@ void BorrowCommand::execute() {
     return;
   }
 
-  if (store->borrowMovie(customer, movie)) {
-    customer->addTransaction('B', movie);
+  if (store->returnMovie(customer, movie)) {
+    customer->addTransaction('R', movie);
     return;
   }
-
-  std::cout << "Movie not available for borrowing" << std::endl;
 }

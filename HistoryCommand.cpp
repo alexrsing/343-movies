@@ -1,12 +1,11 @@
-#include "BorrowCommand.h"
-#include <iostream>
+#include "HistoryCommand.h"
 #include <sstream>
 
 // Factory constructor
-BorrowCommandFactory::BorrowCommandFactory() {}
+HistoryCommandFactory::HistoryCommandFactory() {}
 
-Command *BorrowCommandFactory::createCommand(std::string data,
-                                             MovieStore *store) const {
+Command *HistoryCommandFactory::createCommand(std::string data,
+                                              MovieStore *store) const {
   // parse data from input string into BorrowCommand constructor parameters
   std::istringstream iss(data);
   int customerID;
@@ -29,36 +28,22 @@ Command *BorrowCommandFactory::createCommand(std::string data,
   for (Movie *movie : store->getMovies(movieType)) {
     // if this is the correct movie, return a new BorrowCommand object
     if (movie->isEqual(movieData)) {
-      return new BorrowCommand(store, customer, movie);
+      return new HistoryCommand(store, customer, movie);
     }
   }
 
   // data does not match customer or movie
-  std::cout << "Invalid borrow command data: " << data << std::endl;
+  std::cout << "Invalid history command data: " << data << std::endl;
   return nullptr;
 }
 
-void BorrowCommand::execute() {
-  MovieStore *store = getStore();
-
-  // the following checks should not be necessary if createCommand is
-  // implemented correctly
-  // check customer is valid
+void HistoryCommand::execute() {
+  // check that customer is valid --- this should not be necessary
   if (customer == nullptr) {
     std::cout << "Customer not found" << std::endl;
     return;
   }
 
-  // check movie is valid
-  if (movie == nullptr) {
-    std::cout << "Movie not found" << std::endl;
-    return;
-  }
-
-  if (store->borrowMovie(customer, movie)) {
-    customer->addTransaction('B', movie);
-    return;
-  }
-
-  std::cout << "Movie not available for borrowing" << std::endl;
+  // print this customers transaction history
+  customer->printTransactions();
 }

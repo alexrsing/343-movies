@@ -19,6 +19,9 @@ public:
   void populateCustomers(std::string filePath);
   void populateCommands(std::string filePath);
 
+  Customer *getCustomer(int id);
+  std::vector<Movie *> &getMovies(char genre);
+
 private:
   MyHashTable<char, MovieFactory *> movieFactories;
   MyHashTable<char, CommandFactory *> commandFactories;
