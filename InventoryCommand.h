@@ -11,7 +11,7 @@ public:
 
 class InventoryCommand : public Command {
 public:
-  InventoryCommand(MovieStore *store) : Command(store) {};
+  explicit InventoryCommand(MovieStore *store) : Command(store) {};
   void execute() override;
 };
 

@@ -13,7 +13,7 @@ public:
 
 class Command {
 public:
-  Command(MovieStore *store) : store(store) {}
+  explicit Command(MovieStore *store) : store(store) {}
   virtual ~Command() = default;
   virtual void execute() = 0;
   MovieStore *getStore() const { return store; }

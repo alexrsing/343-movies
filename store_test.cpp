@@ -5,6 +5,7 @@
  * @date 19 Jan 2019
  */
 
+#include "MovieStore.h"
 #include <cassert>
 #include <fstream>
 #include <iostream>

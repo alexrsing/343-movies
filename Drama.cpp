@@ -38,7 +38,7 @@ bool Drama::isEqual(const Movie &other) const {
          getTitle() == otherDrama.getTitle();
 }
 
-bool Drama::isEqual(const std::string data) const {
+bool Drama::isEqual(const std::string &data) const {
   // expected format: " director, title,"
   size_t pos = data.find(',');
   if (pos == std::string::npos) {
