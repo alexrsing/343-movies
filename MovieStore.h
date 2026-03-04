@@ -12,6 +12,7 @@
 class MovieStore {
 public:
   MovieStore();
+  ~MovieStore();
   bool returnMovie(Customer *customer, Movie *movie);
   bool borrowMovie(Customer *customer, Movie *movie);
   void printInventory();

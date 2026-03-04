@@ -8,6 +8,7 @@ class Command;
 
 class CommandFactory {
 public:
+  virtual ~CommandFactory() = default;
   virtual Command *createCommand(std::string data, MovieStore *store) const = 0;
 };
 

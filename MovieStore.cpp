@@ -21,6 +21,33 @@ MovieStore::MovieStore() {
   commandFactories.insert('I', new InventoryCommandFactory());
 }
 
+MovieStore::~MovieStore() {
+  // Delete movie factories
+  for (MovieFactory *f : movieFactories.values()) {
+    delete f;
+  }
+  // Delete command factories
+  for (CommandFactory *f : commandFactories.values()) {
+    delete f;
+  }
+  // Delete movies in inventory
+  for (const auto &movies : inventory.values()) {
+    for (Movie *m : movies) {
+      delete m;
+    }
+  }
+  // Delete customers
+  for (Customer *c : customers.values()) {
+    delete c;
+  }
+  // Delete commands
+  for (const auto &cmds : commands.values()) {
+    for (Command *cmd : cmds) {
+      delete cmd;
+    }
+  }
+}
+
 bool MovieStore::returnMovie(Customer *customer, Movie *movie) {
   // Check if the customer exists in the customers hash table
   if (!customers.contains(customer->getID())) {

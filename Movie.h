@@ -8,6 +8,7 @@ class Movie;
 
 class MovieFactory {
 public:
+  virtual ~MovieFactory() = default;
   virtual Movie *makeMovie(std::string data) const = 0;
 };
 
@@ -20,6 +21,7 @@ private:
   int year;
 
 public:
+  virtual ~Movie() = default;
   Movie(std::string title, std::string director, char genre, int stock,
         int year)
       : title(title), director(director), genre(genre), stock(stock),

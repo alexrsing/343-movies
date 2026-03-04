@@ -24,6 +24,7 @@ public:
   bool insert(const K &key, V v);
   bool contains(const K &key) const;
   bool remove(const K &key, V v);
+  std::vector<V> values() const;
 };
 
 // Implementation for MyHashTable class
@@ -78,6 +79,17 @@ bool MyHashTable<K, V>::remove(const K &key, V v) {
     }
   }
   return false;
+}
+
+template <typename K, typename V>
+std::vector<V> MyHashTable<K, V>::values() const {
+  std::vector<V> result;
+  for (const auto &bucket : buckets) {
+    for (const auto &node : bucket) {
+      result.push_back(node.value);
+    }
+  }
+  return result;
 }
 
 #endif
