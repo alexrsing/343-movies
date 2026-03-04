@@ -3,7 +3,9 @@
 #include <sstream>
 #include <vector>
 
-Customer *CustomerFactory::makeCustomer(std::string data) const {
+CustomerFactory Customer::factory;
+
+Customer *CustomerFactory::makeCustomer(std::string data) {
   // parse data and set customer fields
   int id;
   std::string firstName;

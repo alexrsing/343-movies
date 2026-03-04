@@ -47,10 +47,10 @@ bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
       if (m->getStock() <= 0) {
         std::cout << "Movie is out of stock" << std::endl;
         return false;
-      } else {
-        m->decreaseStock();
-        return true;
       }
+
+      m->decreaseStock();
+      return true;
     }
   }
   std::cout << "Movie not found" << std::endl;
@@ -59,18 +59,18 @@ bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
 
 void MovieStore::printInventory() {
   // Prints movies in a specific order
-  std::vector<Movie *> movies = inventory.get('F');
-  for (const Movie *movie : movies) {
+  std::vector<Movie *> fMovies = inventory.get('F');
+  for (const Movie *movie : fMovies) {
     movie->print();
   }
 
-  std::vector<Movie *> movies = inventory.get('D');
-  for (const Movie *movie : movies) {
+  std::vector<Movie *> dMovies = inventory.get('D');
+  for (const Movie *movie : dMovies) {
     movie->print();
   }
 
-  std::vector<Movie *> movies = inventory.get('C');
-  for (const Movie *movie : movies) {
+  std::vector<Movie *> cMovies = inventory.get('C');
+  for (const Movie *movie : cMovies) {
     movie->print();
   }
 }
@@ -94,6 +94,10 @@ void MovieStore::populateInventory(std::string filePath) {
   while (inputFile >> data) {
     // Read first char (genre) of data
     char genre = data.at(0);
+
+    if (!movieFactories.contains(genre)) {
+      continue;
+    }
     MovieFactory *factory = movieFactories.get(genre);
     Movie *movie = factory->makeMovie(data);
 
@@ -125,7 +129,7 @@ void MovieStore::populateCustomers(std::string filePath) {
 
   std::string data;
   while (inputFile >> data) {
-    Customer *customer = Customer::factory.makeCustomer(data);
+    Customer *customer = CustomerFactory::makeCustomer(data);
     customers.insert(customer->getID(), customer);
   }
 

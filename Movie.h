@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+class Movie;
+
 class MovieFactory {
 public:
   virtual Movie *makeMovie(std::string data) const = 0;
