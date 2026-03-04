@@ -2,6 +2,7 @@
 #define HISTORYCOMMAND_H
 
 #include "Command.h"
+#include "Customer.h"
 
 class HistoryCommandFactory : public CommandFactory {
 public:

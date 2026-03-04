@@ -52,3 +52,4 @@ bool Drama::isEqual(const std::string data) const {
   std::string title = data.substr(start, pos - start);
 
   return getDirector() == director && getTitle() == title;
+}

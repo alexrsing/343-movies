@@ -30,3 +30,16 @@ std::unordered_map<char, std::vector<Movie *>>
 Customer::getTransactions() const {
   return transaction;
 }
+
+void Customer::printTransactions() const {
+  std::cout << "Transaction history for " << firstName << " " << lastName
+            << " (ID: " << id << "):" << std::endl;
+
+  for (const auto &entry : transaction) {
+    std::string action = (entry.first == 'B') ? "Borrowed" : "Returned";
+    for (Movie *movie : entry.second) {
+      std::cout << "  - " << action << ": ";
+      movie->print();
+    }
+  }
+}

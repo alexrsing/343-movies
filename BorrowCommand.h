@@ -2,6 +2,8 @@
 #define BORROWCOMMAND_H
 
 #include "Command.h"
+#include "Customer.h"
+#include "Movie.h"
 #include <string>
 
 class BorrowCommandFactory : public CommandFactory {

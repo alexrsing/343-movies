@@ -1,4 +1,5 @@
 #include "ReturnCommand.h"
+#include "MovieStore.h"
 #include <iostream>
 #include <sstream>
 

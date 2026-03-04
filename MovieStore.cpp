@@ -1,5 +1,25 @@
 #include "MovieStore.h"
+#include "BorrowCommand.h"
+#include "Classic.h"
+#include "Comedy.h"
+#include "Drama.h"
+#include "HistoryCommand.h"
+#include "InventoryCommand.h"
+#include "ReturnCommand.h"
 #include <fstream>
+
+MovieStore::MovieStore() {
+  // Register movie factories
+  movieFactories.insert('F', new ComedyMovieFactory());
+  movieFactories.insert('D', new DramaMovieFactory());
+  movieFactories.insert('C', new ClassicMovieFactory());
+
+  // Register command factories
+  commandFactories.insert('B', new BorrowCommandFactory());
+  commandFactories.insert('R', new ReturnCommandFactory());
+  commandFactories.insert('H', new HistoryCommandFactory());
+  commandFactories.insert('I', new InventoryCommandFactory());
+}
 
 bool MovieStore::returnMovie(Customer *customer, Movie *movie) {
   // Check if the customer exists in the customers hash table
@@ -175,7 +195,11 @@ void MovieStore::populateCommands(std::string filePath) {
     if (command == nullptr) {
       continue;
     }
-    commands.insert(commandType, command);
+    if (commands.contains(commandType)) {
+      commands.get(commandType).push_back(command);
+    } else {
+      commands.insert(commandType, std::vector<Command *>{command});
+    }
   }
 
   inputFile.close();

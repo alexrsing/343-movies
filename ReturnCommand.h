@@ -2,6 +2,8 @@
 #define RETURNCOMMAND_H
 
 #include "Command.h"
+#include "Customer.h"
+#include "Movie.h"
 
 class ReturnCommandFactory : public CommandFactory {
 public:

@@ -1,4 +1,5 @@
 #include "HistoryCommand.h"
+#include "MovieStore.h"
 #include <iostream>
 #include <sstream>
 

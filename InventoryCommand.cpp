@@ -1,10 +1,11 @@
 #include "InventoryCommand.h"
+#include "MovieStore.h"
 #include <sstream>
 
 // Factory constructor
 InventoryCommandFactory::InventoryCommandFactory() {}
 
-Command *InventoryCommandFactory::createCommand(std::string data,
+Command *InventoryCommandFactory::createCommand(std::string /*data*/,
                                                 MovieStore *store) const {
   return new InventoryCommand(store);
 }

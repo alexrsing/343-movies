@@ -1,4 +1,5 @@
 #include "BorrowCommand.h"
+#include "MovieStore.h"
 #include <iostream>
 #include <sstream>
 
