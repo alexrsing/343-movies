@@ -12,7 +12,7 @@ Q: Does the program compile and run to completion: Yes
 - If the program does not compile or gives a segmentation error when run,
 the maximum possible grade is 50%. No need to continue with the rest of self-evaluation
 
-Q: All public functions have been implemented: ENTER_NUMBER
+Q: All public functions have been implemented: 66
 
 - -2 for each functionality not implemented
 
@@ -20,10 +20,10 @@ For each command, state Full, Partial or None to indicate
 if it has been fully, partially or not implemented at all.
 Explain any partial implementations.
 
-Inventory: TODO(student)
-History: TODO(student)
-Borrow: TODO(student)
-Return: TODO(student)
+Inventory: Full
+History: Full
+Borrow: Full
+Return: Full
 
 
 Q: -1 for each compilation warning, min -3: 0
@@ -60,39 +60,39 @@ Q: Are all functions in .h and .cpp file documents (min -3): 0
 
 State the file and function where the information can be found
 
-invalid command code: TODO(student)
+invalid command code: Class: MovieStore.cpp, Method: populateCommands
 
-invalid movie type: TODO(student)
+invalid movie type: MovieStore.cpp, Method: populateInventory
 
-invalid customer ID: TODO(student)
+invalid customer ID: BorrowCommandFactory::createCommand, ReturnCommandFactory::createCommand, HistoryCommandFactory::createCommand
 
-invalid movie: TODO(student)
+invalid movie: BorrowCommandFactory::createCommand, ReturnCommandFactory::createCommand. When a movie does not match any movies in the inventory, 
 
-factory classes: TODO(student)
+factory classes: ClassicMovieFactory, ComedyMovieFactory, DramaMovieFactory, CustomerFactory, BorrowCommandFactory, ReturnCommandFactory, HistoryCommandFactory, InventoryCommandFactory
 
-hashtable: TODO(student) (explain what the hashtable is used for)
+hashtable: A template hash table is used in MovieStore to store movies (inventory), movie factories, commands, command factories, and customers. THe underlying data structure is a vector<std::list<HashNode>> with 101 buckets (HashNode lists). 
 
-container used for comedy movies: TODO(student)
+container used for comedy movies: std::vector<Movie*> stored in MyHashTable<char, std::vector<Movie*>> inventory keyed by 'F'
 
 function for sorting comedy movies: TODO(student)
 
 function where comedy movies are sorted: TODO(student)
 
-functions called when retrieving a comedy movie based on title and year: TODO(student)
+functions called when retrieving a comedy movie based on title and year: MovieStore::getMovies('F') -> Comedy::isEqual(const std::string&)
 
-functions called for retrieving and printing customer history: TODO(student)
+functions called for retrieving and printing customer history: HistoryCommandFactory::createCommand -> MovieStore::getCustomer -> HistoryCommand::execute -> Customer::printTransactions
 
-container used for customer history: TODO(student)
+container used for customer history: std::unordered_map<char, std::vector<Movie*>> - that contains command chars (B, R) as keys
 
-functions called when borrowing a movie: TODO(student)
+functions called when borrowing a movie: BorrowCommandFactory::createCommand creates the borrow command -> BorrowCommand::execute -> MovieStore::borrowMovie -> Customer::addTransaction
 
-explain borrowing a movie that does not exist: TODO(student)
+explain borrowing a movie that does not exist: In BorrowCommandFactory::createCommand, before the BorrowCommand is created, the system checks if the movie is a valid movie. If not, it prints "Invalid borrow command data" and a nullptr is returned and nothing is added to the commands.
 
-explain borrowing a movie that has 0 stock: TODO(student)
+explain borrowing a movie that has 0 stock: In MovieStore::borrowMovie, it prints {title} is out of stock if stock <= 0
 
 explain returning a movie that customer has not checked out: TODO(student)
 
-any static_cast or dynamic_cast used: TODO(student)
+any static_cast or dynamic_cast used: Classic::isEqual, Comedy::isEqual, Drama::isEqual
 
 ## Bonus +5
 
