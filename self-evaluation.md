@@ -74,9 +74,9 @@ hashtable: A template hash table is used in MovieStore to store movies (inventor
 
 container used for comedy movies: std::vector<Movie*> stored in MyHashTable<char, std::vector<Movie*>> inventory keyed by 'F'
 
-function for sorting comedy movies: TODO(student)
+function for sorting comedy movies: All movies are sorted in MovieStore::populateInventory. Once the HashTable is populated, each vector (one for each genre) is sorted using std::sort. Comedy movies are sorted by title, then year.
 
-function where comedy movies are sorted: TODO(student)
+function where comedy movies are sorted: MovieStore::populateInventory
 
 functions called when retrieving a comedy movie based on title and year: MovieStore::getMovies('F') -> Comedy::isEqual(const std::string&)
 

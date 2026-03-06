@@ -6,6 +6,7 @@
 #include "HistoryCommand.h"
 #include "InventoryCommand.h"
 #include "ReturnCommand.h"
+#include <algorithm>
 #include <fstream>
 
 MovieStore::MovieStore() {
@@ -160,6 +161,13 @@ void MovieStore::populateInventory(std::string filePath) {
   }
 
   inputFile.close();
+
+  for (char genre : {'F', 'D', 'C'}) {
+    if (inventory.contains(genre)) {
+      std::sort(inventory.get(genre).begin(), inventory.get(genre).end(),
+                [](const Movie *a, const Movie *b) { return *b > *a; });
+    }
+  }
 }
 
 /**

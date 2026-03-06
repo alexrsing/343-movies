@@ -75,18 +75,15 @@ bool Classic::operator>(const Movie &other) const {
   }
 
   const Classic &otherClassic = static_cast<const Classic &>(other);
-  // Sort by title first
-  if (getTitle() != otherClassic.getTitle()) {
-    return getTitle() > otherClassic.getTitle();
-  }
+  // Sort by release date first, then major actor
   if (getYear() != otherClassic.getYear()) {
     return getYear() > otherClassic.getYear();
   }
   if (month != otherClassic.month) {
     return month > otherClassic.month;
   }
-  if (actorLast != otherClassic.actorLast) {
-    return actorLast > otherClassic.actorLast;
+  if (actorFirst != otherClassic.actorFirst) {
+    return actorFirst > otherClassic.actorFirst;
   }
-  return actorFirst > otherClassic.actorFirst;
+  return actorLast > otherClassic.actorLast;
 }

@@ -2,7 +2,6 @@
 
 Movie *ComedyMovieFactory::makeMovie(std::string data) const {
   // format: "F, stock, director, title, year"
-  // skip genre character and first comma
   size_t pos = data.find(',');
 
   size_t start = pos + 2;
@@ -61,5 +60,5 @@ bool Comedy::operator>(const Movie &other) const {
   if (getTitle() != otherComedy.getTitle()) {
     return getTitle() > otherComedy.getTitle();
   }
-  return getDirector() > otherComedy.getDirector();
+  return getYear() > otherComedy.getYear();
 }
