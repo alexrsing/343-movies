@@ -25,6 +25,7 @@ public:
   void addTransaction(char key, Movie *movie);
   std::unordered_map<char, std::vector<Movie *>> getTransactions() const;
   void printTransactions() const;
+  bool hasBorrowed(Movie *movie) const;
 
 private:
   int id;

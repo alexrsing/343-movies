@@ -61,6 +61,12 @@ void ReturnCommand::execute() {
     return;
   }
 
+  // Check if movie is currently borrowed by this customer
+  if (!customer->hasBorrowed(movie)) {
+    std::cout << "Customer has not borrowed this movie" << std::endl;
+    return;
+  }
+
   if (store->returnMovie(customer, movie)) {
     customer->addTransaction('R', movie);
     return;

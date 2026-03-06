@@ -31,6 +31,27 @@ Customer::getTransactions() const {
   return transaction;
 }
 
+bool Customer::hasBorrowed(Movie *movie) const {
+  int borrowCount = 0;
+  auto it = transaction.find('B');
+  if (it != transaction.end()) {
+    for (Movie *m : it->second) {
+      if (m == movie) {
+        borrowCount++;
+      }
+    }
+  }
+  it = transaction.find('R');
+  if (it != transaction.end()) {
+    for (Movie *m : it->second) {
+      if (m == movie) {
+        borrowCount--;
+      }
+    }
+  }
+  return borrowCount > 0;
+}
+
 void Customer::printTransactions() const {
   std::cout << "Transaction history for " << firstName << " " << lastName
             << " (ID: " << id << "):" << std::endl;

@@ -12,7 +12,7 @@ Q: Does the program compile and run to completion: Yes
 - If the program does not compile or gives a segmentation error when run,
 the maximum possible grade is 50%. No need to continue with the rest of self-evaluation
 
-Q: All public functions have been implemented: 66
+Q: All public functions have been implemented: 70
 
 - -2 for each functionality not implemented
 
@@ -90,7 +90,7 @@ explain borrowing a movie that does not exist: In BorrowCommandFactory::createCo
 
 explain borrowing a movie that has 0 stock: In MovieStore::borrowMovie, it prints {title} is out of stock if stock <= 0
 
-explain returning a movie that customer has not checked out: TODO(student)
+explain returning a movie that customer has not checked out: When a customer tries to return a movie, a check is done to see if the customer currently has the movie checked out. This is done by checking in the customers transaction history if borrow count for the movie is greater than return count
 
 any static_cast or dynamic_cast used: Classic::isEqual, Comedy::isEqual, Drama::isEqual
 
