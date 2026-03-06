@@ -27,6 +27,8 @@ public:
   bool isEqual(const std::string &data) const override;
 
   int getMonth() const;
+
+  bool operator>(const Movie &other) const override;
 };
 
 #endif

@@ -53,3 +53,15 @@ bool Drama::isEqual(const std::string &data) const {
 
   return getDirector() == director && getTitle() == title;
 }
+
+bool Drama::operator>(const Movie &other) const {
+  if (getGenre() != other.getGenre()) {
+    throw std::invalid_argument("Cannot compare movies of different genres");
+  }
+
+  const Drama &otherDrama = static_cast<const Drama &>(other);
+  if (getDirector() != otherDrama.getDirector()) {
+    return getDirector() > otherDrama.getDirector();
+  }
+  return getTitle() > otherDrama.getTitle();
+}
