@@ -68,3 +68,25 @@ bool Classic::isEqual(const std::string &data) const {
 }
 
 int Classic::getMonth() const { return month; }
+
+bool Classic::operator>(const Movie &other) const {
+  if (getGenre() != other.getGenre()) {
+    throw std::invalid_argument("Cannot compare movies of different genres");
+  }
+
+  const Classic &otherClassic = static_cast<const Classic &>(other);
+  // Sort by title first
+  if (getTitle() != otherClassic.getTitle()) {
+    return getTitle() > otherClassic.getTitle();
+  }
+  if (getYear() != otherClassic.getYear()) {
+    return getYear() > otherClassic.getYear();
+  }
+  if (month != otherClassic.month) {
+    return month > otherClassic.month;
+  }
+  if (actorLast != otherClassic.actorLast) {
+    return actorLast > otherClassic.actorLast;
+  }
+  return actorFirst > otherClassic.actorFirst;
+}

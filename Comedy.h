@@ -18,6 +18,8 @@ public:
   void print() const override;
   bool isEqual(const Movie &other) const override;
   bool isEqual(const std::string &data) const override;
+
+  bool operator>(const Movie &other) const override;
 };
 
 #endif

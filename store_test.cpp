@@ -41,7 +41,7 @@ void testStore2() {
   store.populateCustomers("data4customers.txt");
   store.populateCommands("data4commands.txt");
 
-  // store.printInventory();
+  store.printInventory();
 
   cout << "End testStore2" << endl;
 }

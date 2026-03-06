@@ -51,3 +51,15 @@ bool Comedy::isEqual(const std::string &data) const {
 
   return getTitle() == title && getYear() == year;
 }
+
+bool Comedy::operator>(const Movie &other) const {
+  if (getGenre() != other.getGenre()) {
+    throw std::invalid_argument("Cannot compare movies of different genres");
+  }
+
+  const Comedy &otherComedy = static_cast<const Comedy &>(other);
+  if (getTitle() != otherComedy.getTitle()) {
+    return getTitle() > otherComedy.getTitle();
+  }
+  return getDirector() > otherComedy.getDirector();
+}
