@@ -23,28 +23,20 @@ int Customer::getID() const {
 }
 
 void Customer::addTransaction(char key, Movie *movie) {
-  transaction[key].push_back(movie);
+  transactions.emplace_back(key, movie);
 }
 
-std::unordered_map<char, std::vector<Movie *>>
-Customer::getTransactions() const {
-  return transaction;
+std::vector<std::pair<char, Movie *>> Customer::getTransactions() const {
+  return transactions;
 }
 
 bool Customer::hasBorrowed(Movie *movie) const {
   int borrowCount = 0;
-  auto it = transaction.find('B');
-  if (it != transaction.end()) {
-    for (Movie *m : it->second) {
-      if (m == movie) {
+  for (const auto &t : transactions) {
+    if (t.second == movie) {
+      if (t.first == 'B') {
         borrowCount++;
-      }
-    }
-  }
-  it = transaction.find('R');
-  if (it != transaction.end()) {
-    for (Movie *m : it->second) {
-      if (m == movie) {
+      } else if (t.first == 'R') {
         borrowCount--;
       }
     }
@@ -56,11 +48,9 @@ void Customer::printTransactions() const {
   std::cout << "Transaction history for " << firstName << " " << lastName
             << " (ID: " << id << "):" << std::endl;
 
-  for (const auto &entry : transaction) {
-    std::string action = (entry.first == 'B') ? "Borrowed" : "Returned";
-    for (Movie *movie : entry.second) {
-      std::cout << "  - " << action << ": ";
-      movie->print();
-    }
+  for (const auto &t : transactions) {
+    std::string action = (t.first == 'B') ? "Borrowed" : "Returned";
+    std::cout << "  - " << action << ": ";
+    t.second->print();
   }
 }

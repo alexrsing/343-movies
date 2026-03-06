@@ -10,6 +10,8 @@ char Movie::getGenre() const { return genre; }
 
 int Movie::getStock() const { return stock; }
 
+int Movie::getBorrowed() const { return initialStock - stock; }
+
 int Movie::getYear() const { return year; }
 
 // Stock management functions

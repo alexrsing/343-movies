@@ -161,9 +161,9 @@ void testStoreFinal() {
 
   // Verify transaction was recorded
   auto transactions = porky->getTransactions();
-  assert(transactions.count('B') == 1);
-  assert(transactions['B'].size() == 1);
-  assert(transactions['B'][0] == annieHall);
+  assert(transactions.size() == 1);
+  assert(transactions[0].first == 'B');
+  assert(transactions[0].second == annieHall);
 
   // Return and verify both transactions recorded
   assert(store.returnMovie(porky, annieHall) == true);
@@ -171,9 +171,9 @@ void testStoreFinal() {
   assert(annieHall->getStock() == 10);
 
   transactions = porky->getTransactions();
-  assert(transactions.count('R') == 1);
-  assert(transactions['R'].size() == 1);
-  assert(transactions['R'][0] == annieHall);
+  assert(transactions.size() == 2);
+  assert(transactions[1].first == 'R');
+  assert(transactions[1].second == annieHall);
 
   // Test out-of-stock: borrow until stock is 0
   Customer *daffy = store.getCustomer(9999);

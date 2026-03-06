@@ -36,9 +36,9 @@ Movie *ClassicMovieFactory::makeMovie(std::string data) const {
 }
 
 void Classic::print() const {
-  std::cout << "Classic: " << getStock() << ", " << getDirector() << ", "
-            << getTitle() << ", " << actorFirst << " " << actorLast << " "
-            << month << " " << getYear() << std::endl;
+  std::cout << "Classic: " << getStock() << " in, " << getBorrowed() << " out, "
+            << getDirector() << ", " << getTitle() << ", " << actorFirst << " "
+            << actorLast << " " << month << " " << getYear() << std::endl;
 }
 
 bool Classic::isEqual(const Movie &other) const {

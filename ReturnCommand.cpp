@@ -25,6 +25,20 @@ Command *ReturnCommandFactory::createCommand(std::string data,
   std::string movieData;
   std::getline(iss, movieData);
 
+  // Validate media type
+  if (!store->validMediaType(mediaType[0])) {
+    std::cout << "Invalid media type " << mediaType
+              << ", discarding line: " << movieData << std::endl;
+    return nullptr;
+  }
+
+  // Validate movie type
+  if (store->getMovies(movieType).empty()) {
+    std::cout << "Invalid movie type " << movieType
+              << ", discarding line: " << movieData << std::endl;
+    return nullptr;
+  }
+
   // Use store parameter to look up movie and customer
   Customer *customer = store->getCustomer(customerID);
   if (customer == nullptr) {

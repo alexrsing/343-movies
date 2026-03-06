@@ -23,9 +23,9 @@ Movie *ComedyMovieFactory::makeMovie(std::string data) const {
 }
 
 void Comedy::print() const {
-  std::cout << "Comedy: " << getStock() << ", " << getDirector() << ", "
-            << getTitle() << ", "
-            << " " << getYear() << std::endl;
+  std::cout << "Comedy: " << getStock() << " in, " << getBorrowed() << " out, "
+            << getDirector() << ", " << getTitle() << ", " << getYear()
+            << std::endl;
 }
 
 bool Comedy::isEqual(const Movie &other) const {

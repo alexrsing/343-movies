@@ -18,6 +18,7 @@ private:
   std::string director;
   char genre;
   int stock;
+  int initialStock;
   int year;
 
 public:
@@ -25,12 +26,13 @@ public:
   Movie(std::string title, std::string director, char genre, int stock,
         int year)
       : title(title), director(director), genre(genre), stock(stock),
-        year(year) {};
+        initialStock(stock), year(year) {};
 
   std::string getTitle() const;
   std::string getDirector() const;
   char getGenre() const;
   int getStock() const;
+  int getBorrowed() const;
   int getYear() const;
 
   bool increaseStock();

@@ -2,7 +2,7 @@
 #define CUSTOMER_H
 
 #include <string>
-#include <unordered_map>
+#include <utility>
 #include <vector>
 
 #include "Movie.h"
@@ -23,7 +23,7 @@ public:
   int getID() const;
 
   void addTransaction(char key, Movie *movie);
-  std::unordered_map<char, std::vector<Movie *>> getTransactions() const;
+  std::vector<std::pair<char, Movie *>> getTransactions() const;
   void printTransactions() const;
   bool hasBorrowed(Movie *movie) const;
 
@@ -31,7 +31,7 @@ private:
   int id;
   std::string firstName;
   std::string lastName;
-  std::unordered_map<char, std::vector<Movie *>> transaction;
+  std::vector<std::pair<char, Movie *>> transactions;
 };
 
 #endif

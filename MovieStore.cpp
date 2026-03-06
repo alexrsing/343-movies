@@ -12,14 +12,20 @@
 MovieStore::MovieStore() {
   // Register movie factories
   movieFactories.insert('F', new ComedyMovieFactory());
+  genres.push_back('F');
   movieFactories.insert('D', new DramaMovieFactory());
+  genres.push_back('D');
   movieFactories.insert('C', new ClassicMovieFactory());
+  genres.push_back('C');
 
   // Register command factories
   commandFactories.insert('B', new BorrowCommandFactory());
   commandFactories.insert('R', new ReturnCommandFactory());
   commandFactories.insert('H', new HistoryCommandFactory());
   commandFactories.insert('I', new InventoryCommandFactory());
+
+  // Register media types
+  mediaTypes.push_back('D');
 }
 
 MovieStore::~MovieStore() {
@@ -42,10 +48,8 @@ MovieStore::~MovieStore() {
     delete c;
   }
   // Delete commands
-  for (const auto &cmds : commands.values()) {
-    for (Command *cmd : cmds) {
-      delete cmd;
-    }
+  for (Command *cmd : commands) {
+    delete cmd;
   }
 }
 
@@ -93,7 +97,7 @@ bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
   for (Movie *m : movies) {
     if (m == movie) {
       if (m->getStock() <= 0) {
-        printf("%s is out of stock\n", m->getTitle().c_str());
+        std::cout << movie->getTitle() << " is out of stock" << std::endl;
         return false;
       }
 
@@ -106,20 +110,12 @@ bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
 }
 
 void MovieStore::printInventory() {
-  // Prints movies in a specific order
-  std::vector<Movie *> fMovies = inventory.get('F');
-  for (const Movie *movie : fMovies) {
-    movie->print();
-  }
-
-  std::vector<Movie *> dMovies = inventory.get('D');
-  for (const Movie *movie : dMovies) {
-    movie->print();
-  }
-
-  std::vector<Movie *> cMovies = inventory.get('C');
-  for (const Movie *movie : cMovies) {
-    movie->print();
+  for (char genre : genres) {
+    if (inventory.contains(genre)) {
+      for (const Movie *movie : inventory.get(genre)) {
+        movie->print();
+      }
+    }
   }
 }
 
@@ -147,6 +143,8 @@ void MovieStore::populateInventory(std::string filePath) {
     char genre = data.at(0);
 
     if (!movieFactories.contains(genre)) {
+      std::cout << "Unknown movie type: " << genre
+                << ", discarding line: " << data.substr(1) << std::endl;
       continue;
     }
     MovieFactory *factory = movieFactories.get(genre);
@@ -162,7 +160,7 @@ void MovieStore::populateInventory(std::string filePath) {
 
   inputFile.close();
 
-  for (char genre : {'F', 'D', 'C'}) {
+  for (char genre : genres) {
     if (inventory.contains(genre)) {
       std::sort(inventory.get(genre).begin(), inventory.get(genre).end(),
                 [](const Movie *a, const Movie *b) { return *b > *a; });
@@ -212,11 +210,19 @@ std::vector<Movie *> &MovieStore::getMovies(char genre) {
   try {
     return inventory.get(genre);
   } catch (const std::runtime_error &e) {
-    std::cout << "Genre " << genre << " not found in inventory" << std::endl;
     // if genre does not exist, return empty vector
     static std::vector<Movie *> empty;
     return empty;
   }
+}
+
+bool MovieStore::validMediaType(char type) const {
+  for (char mt : mediaTypes) {
+    if (mt == type) {
+      return true;
+    }
+  }
+  return false;
 }
 
 void MovieStore::populateCommands(std::string filePath) {
@@ -239,6 +245,8 @@ void MovieStore::populateCommands(std::string filePath) {
     // confirm that command type exists in commandFactories hash table - discard
     // line if doesn't exist
     if (!commandFactories.contains(commandType)) {
+      std::cout << "Unknown command type: " << commandType
+                << ", discarding line: " << data.substr(1) << std::endl;
       continue;
     }
     CommandFactory *factory = commandFactories.get(commandType);
@@ -246,12 +254,14 @@ void MovieStore::populateCommands(std::string filePath) {
     if (command == nullptr) {
       continue;
     }
-    if (commands.contains(commandType)) {
-      commands.get(commandType).push_back(command);
-    } else {
-      commands.insert(commandType, std::vector<Command *>{command});
-    }
+    commands.push_back(command);
   }
 
   inputFile.close();
+}
+
+void MovieStore::executeCommands() {
+  for (Command *cmd : commands) {
+    cmd->execute();
+  }
 }
