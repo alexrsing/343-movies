@@ -92,7 +92,7 @@ bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
   for (Movie *m : movies) {
     if (m == movie) {
       if (m->getStock() <= 0) {
-        std::cout << "Movie is out of stock" << std::endl;
+        printf("%s is out of stock\n", m->getTitle().c_str());
         return false;
       }
 
