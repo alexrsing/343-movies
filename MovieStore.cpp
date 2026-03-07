@@ -254,12 +254,8 @@ std::vector<Movie *> &MovieStore::getMovies(char genre) {
  * otherwise.
  */
 bool MovieStore::validMediaType(char type) const {
-  for (char mt : mediaTypes) {
-    if (mt == type) {
-      return true;
-    }
-  }
-  return false;
+  return std::any_of(mediaTypes.begin(), mediaTypes.end(),
+                     [type](char mt) { return mt == type; });
 }
 
 // Load data from files
