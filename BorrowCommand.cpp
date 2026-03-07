@@ -3,13 +3,16 @@
 #include <iostream>
 #include <sstream>
 
+// Registers the Borrow command factory with the MovieStore
 static bool registered = [] {
   MovieStore::registerCommandFactory('B', new BorrowCommandFactory());
   return true;
 }();
 
+// Constructor for BorrowCommandFactory
 BorrowCommandFactory::BorrowCommandFactory() {}
 
+// Creates a BorrowCommand from a line of command input
 Command *BorrowCommandFactory::createCommand(std::string data,
                                              MovieStore *store) const {
   // parse data from input string into BorrowCommand constructor parameters
@@ -62,6 +65,7 @@ Command *BorrowCommandFactory::createCommand(std::string data,
   return nullptr;
 }
 
+// Executes the borrow command and updates inventory and transaction history
 void BorrowCommand::execute() {
   MovieStore *store = getStore();
 
@@ -79,10 +83,12 @@ void BorrowCommand::execute() {
     return;
   }
 
+  // Attempt to borrow the movie and record the transaction
   if (store->borrowMovie(customer, movie)) {
     customer->addTransaction('B', movie);
     return;
   }
 
+  // Movie could not be borrowed because it is unavailable
   std::cout << "Movie not available for borrowing" << std::endl;
 }

@@ -1,13 +1,15 @@
 #include "Drama.h"
 #include "MovieStore.h"
 
+// Comparison operator used for sorting drama movies
 static bool registered = [] {
   MovieStore::registerMovieFactory('D', 1, new DramaMovieFactory());
   return true;
 }();
 
+// Creates a Drama movie object from a line of inventory input data
 Movie *DramaMovieFactory::makeMovie(std::string data) const {
-  // format: "D, stock, director, title, year"
+  // Format: "D, stock, director, title, year"
 
   size_t pos = data.find(',');
 
@@ -29,12 +31,14 @@ Movie *DramaMovieFactory::makeMovie(std::string data) const {
   return new Drama(stock, director, title, year);
 }
 
+// Displays drama movie information including stock and year
 void Drama::print() const {
   std::cout << "Drama: " << getStock() << " in, " << getBorrowed() << " out, "
             << getDirector() << ", " << getTitle() << ", " << getYear()
             << std::endl;
 }
 
+// Checks if two drama movies represent the same movie
 bool Drama::isEqual(const Movie &other) const {
   if (getGenre() != other.getGenre()) {
     return false;
@@ -45,6 +49,7 @@ bool Drama::isEqual(const Movie &other) const {
          getTitle() == otherDrama.getTitle();
 }
 
+// Checks if the movie matches search data from command input
 bool Drama::isEqual(const std::string &data) const {
   // expected format: " director, title,"
   size_t pos = data.find(',');
@@ -61,6 +66,8 @@ bool Drama::isEqual(const std::string &data) const {
   return getDirector() == director && getTitle() == title;
 }
 
+// Defines sorting order for drama movies
+// Sorted by director first, then title
 bool Drama::operator>(const Movie &other) const {
   if (getGenre() != other.getGenre()) {
     throw std::invalid_argument("Cannot compare movies of different genres");

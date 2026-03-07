@@ -2,13 +2,15 @@
 #include "MovieStore.h"
 #include <sstream>
 
+// Registers the Classic movie factory with the MovieStore
 static bool registered = [] {
   MovieStore::registerMovieFactory('C', 2, new ClassicMovieFactory());
   return true;
 }();
 
+// Creates a Classic movie object from a line of inventory input data
 Movie *ClassicMovieFactory::makeMovie(std::string data) const {
-  // format:
+  // Format:
   // C, stock, director, title, actorFirst actorLast month year
 
   size_t pos = data.find(',');
@@ -41,12 +43,14 @@ Movie *ClassicMovieFactory::makeMovie(std::string data) const {
                      year);
 }
 
+// Displays classic movie information including stock and actor
 void Classic::print() const {
   std::cout << "Classic: " << getStock() << " in, " << getBorrowed() << " out, "
             << getDirector() << ", " << getTitle() << ", " << actorFirst << " "
             << actorLast << " " << month << " " << getYear() << std::endl;
 }
 
+// Checks if two classic movies represent the same movie
 bool Classic::isEqual(const Movie &other) const {
   if (getGenre() != other.getGenre()) {
     return false;
@@ -59,6 +63,7 @@ bool Classic::isEqual(const Movie &other) const {
          actorLast == otherClassic.actorLast;
 }
 
+// Checks if movie matches search data from command input
 bool Classic::isEqual(const std::string &data) const {
   // expected format: " month year actorFirst actorLast"
   std::istringstream iss(data);
@@ -73,8 +78,11 @@ bool Classic::isEqual(const std::string &data) const {
          actorLast == aLast;
 }
 
+// Returns the release month of the classic movie
 int Classic::getMonth() const { return month; }
 
+// Defines sorting order for classic movies
+// Sorted by year, then month, then major actor name
 bool Classic::operator>(const Movie &other) const {
   if (getGenre() != other.getGenre()) {
     throw std::invalid_argument("Cannot compare movies of different genres");

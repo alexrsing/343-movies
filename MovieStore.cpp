@@ -2,26 +2,40 @@
 #include <algorithm>
 #include <fstream>
 
-// Static registry accessors
+// Returns the static movie factory registry
 std::map<char, MovieFactoryEntry> &MovieStore::getMovieRegistry() {
   static std::map<char, MovieFactoryEntry> registry;
   return registry;
 }
 
+/**
+ * Returns the static registry for command factories.
+ */
 std::map<char, CommandFactory *> &MovieStore::getCommandRegistry() {
   static std::map<char, CommandFactory *> registry;
   return registry;
 }
 
+/**
+ * Registers a movie factory in the static registry with the given code and
+ * priority.
+ */
 void MovieStore::registerMovieFactory(char code, int priority,
                                       MovieFactory *factory) {
   getMovieRegistry()[code] = {priority, factory};
 }
 
+/**
+ * Registers a command factory in the static registry with the given code.
+ */
 void MovieStore::registerCommandFactory(char code, CommandFactory *factory) {
   getCommandRegistry()[code] = factory;
 }
 
+/**
+ * Constructor for MovieStore. Initializes the movie and command factories from
+ * the static registries, and sets up the media types.
+ */
 MovieStore::MovieStore() {
   // Copy movie factories from static registry, sorted by priority
   std::vector<std::pair<int, char>> ordered;
@@ -30,6 +44,7 @@ MovieStore::MovieStore() {
   }
   std::sort(ordered.begin(), ordered.end());
 
+  // Insert movie factories in priority order
   for (const auto &p : ordered) {
     char code = p.second;
     MovieFactory *factory = getMovieRegistry()[code].factory;
@@ -72,6 +87,11 @@ MovieStore::~MovieStore() {
   getCommandRegistry().clear();
 }
 
+/**
+ * Returns true if the movie was successfully returned by the customer, false
+ * otherwise.
+ * Increases stock for the returned movie.
+ */
 bool MovieStore::returnMovie(Customer *customer, Movie *movie) {
   // Check if the customer exists in the customers hash table
   if (!customers.contains(customer->getID())) {
@@ -96,6 +116,10 @@ bool MovieStore::returnMovie(Customer *customer, Movie *movie) {
   return false;
 }
 
+/**
+ * Returns true if the movie was successfully borrowed by the customer,
+ * otherwise false.  Decreases stock if movie is available.
+ */
 bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
   // Check if the customer exists in the customers hash table
   if (!customers.contains(customer->getID())) {
@@ -124,6 +148,10 @@ bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
   return false;
 }
 
+/**
+ * Prints the inventory of movies in the store, sorted by genre and then by
+ * movie
+ */
 void MovieStore::printInventory() {
   for (char genre : genres) {
     if (inventory.contains(genre)) {
@@ -134,6 +162,9 @@ void MovieStore::printInventory() {
   }
 }
 
+/**
+ * Populates the inventory of movies from a file.
+ */
 void MovieStore::populateInventory(std::string filePath) {
   std::ifstream inputFile;
 
@@ -175,6 +206,9 @@ void MovieStore::populateInventory(std::string filePath) {
   }
 }
 
+/**
+ * Populates the customers from a file.
+ */
 void MovieStore::populateCustomers(std::string filePath) {
   std::ifstream inputFile;
 
@@ -196,6 +230,9 @@ void MovieStore::populateCustomers(std::string filePath) {
   inputFile.close();
 }
 
+/**
+ * Returns a pointer to the customer with the given ID
+ */
 Customer *MovieStore::getCustomer(int id) {
   if (!customers.contains(id)) {
     return nullptr;
@@ -212,15 +249,16 @@ std::vector<Movie *> &MovieStore::getMovies(char genre) {
   }
 }
 
+/**
+ * Returns true if the given media type is valid for this store, false
+ * otherwise.
+ */
 bool MovieStore::validMediaType(char type) const {
-  for (char mt : mediaTypes) {
-    if (mt == type) {
-      return true;
-    }
-  }
-  return false;
+  return std::any_of(mediaTypes.begin(), mediaTypes.end(),
+                     [type](char mt) { return mt == type; });
 }
 
+// Load data from files
 void MovieStore::populateCommands(std::string filePath) {
   std::ifstream inputFile;
 
@@ -252,6 +290,7 @@ void MovieStore::populateCommands(std::string filePath) {
   inputFile.close();
 }
 
+// Execute all commands in the order they were read from the file
 void MovieStore::executeCommands() {
   for (Command *cmd : commands) {
     cmd->execute();
