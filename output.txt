@@ -1,5 +1,5 @@
-Wed Mar  4 00:09:39 UTC 2026
-Linux LinuxMachine 6.10.14-linuxkit #1 SMP Wed Sep 10 06:47:45 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+Sat Mar  7 00:33:32 UTC 2026
+Linux LinuxMachine 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
 uid=1000(cssuwbstudent) gid=1000(cssuwbstudent) groups=1000(cssuwbstudent),10(wheel)
 =====================================================
 1. Compiles without warnings with -Wall -Wextra flags
@@ -12,9 +12,80 @@ uid=1000(cssuwbstudent) gid=1000(cssuwbstudent) groups=1000(cssuwbstudent),10(wh
 Start testStore1
 End testStore1
 Start testStore2
+Unknown movie type: Z, discarding line: , 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
+Unknown movie type: Z, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+Invalid movie type Z, discarding line:  2 1971 Malcolm McDowell
+Unknown command type: X, discarding line: 
+Unknown command type: Z, discarding line:  1000 D C 10 1941 Humphrey Bogart
+Customer 1234 not found
+Invalid borrow command data: B 1000 D F Bogus Title, 2001
+Invalid media type Z, discarding line:  Fargo, 1996
+Invalid borrow command data: B 1000 D D Steven Spielberg, Bogus Title,
+Comedy: 10 in, 0 out, Woody Allen, Annie Hall, 1977
+Comedy: 10 in, 0 out, Joel Coen, Fargo, 1996
+Comedy: 10 in, 0 out, John Landis, National Lampoon's Animal House, 1978
+Comedy: 10 in, 0 out, Different Years, Pirates of the Caribbean, 2000
+Comedy: 10 in, 0 out, Gore Verbinski, Pirates of the Caribbean, 2003
+Comedy: 10 in, 0 out, Nora Ephron, Sleepless in Seattle, 1993
+Comedy: 10 in, 0 out, Rob Reiner, When Harry Met Sally, 1989
+Comedy: 10 in, 0 out, Nora Ephron, You've Got Mail, 1998
+Drama: 10 in, 0 out, Barry Levinson, Good Morning Vietnam, 1988
+Drama: 10 in, 0 out, Barry Levinson, Same Director Good Morning Vietnam, 1988
+Drama: 10 in, 0 out, Clint Eastwood, Unforgiven, 1992
+Drama: 10 in, 0 out, Gus Van Sant, Good Will Hunting, 2000
+Drama: 10 in, 0 out, Jonathan Demme, Silence of the Lambs, 1991
+Drama: 10 in, 0 out, Nancy Savoca, Dogfight, 1991
+Drama: 10 in, 0 out, Phillippe De Broca, King of Hearts, 1967
+Drama: 10 in, 0 out, Steven Spielberg, Schindler's List, 1993
+Classic: 10 in, 0 out, George Cukor, Holiday, Cary Grant 9 1938
+Classic: 10 in, 0 out, George Cukor, Holiday, Katherine Hepburn 9 1938
+Classic: 10 in, 0 out, Victor Fleming, Gone With the Wind, Clark Gable 2 1939
+Classic: 10 in, 0 out, Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
+Classic: 10 in, 0 out, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
+Classic: 10 in, 0 out, George Cukor, The Philadelphia Story, Cary Grant 5 1940
+Classic: 10 in, 0 out, George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
+Classic: 10 in, 0 out, John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
+Classic: 10 in, 0 out, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
+Classic: 10 in, 0 out, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
+Classic: 10 in, 0 out, Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
+Classic: 10 in, 0 out, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+Classic: 10 in, 0 out, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971
+Classic: 10 in, 0 out, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
 End testStore2
 =====================================
 Start testStoreFinal
+Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
+Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
+Unknown movie type: C, discarding line: , 10, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
+Unknown movie type: F, discarding line: , 10, Nora Ephron, Sleepless in Seattle, 1993
+Unknown movie type: D, discarding line: , 10, Barry Levinson, Good Morning Vietnam, 1988
+Unknown movie type: D, discarding line: , 10, Barry Levinson, Same Director Good Morning Vietnam, 1988
+Unknown movie type: D, discarding line: , 10, Gus Van Sant, Good Will Hunting, 2000
+Unknown movie type: F, discarding line: , 10, Woody Allen, Annie Hall, 1977
+Unknown movie type: F, discarding line: , 10, Rob Reiner, When Harry Met Sally, 1989
+Unknown movie type: D, discarding line: , 10, Phillippe De Broca, King of Hearts, 1967
+Unknown movie type: D, discarding line: , 10, Steven Spielberg, Schindler's List, 1993
+Unknown movie type: F, discarding line: , 10, Gore Verbinski, Pirates of the Caribbean, 2003
+Unknown movie type: F, discarding line: , 10, Different Years, Pirates of the Caribbean, 2000
+Unknown movie type: F, discarding line: , 10, Joel Coen, Fargo, 1996
+Unknown movie type: D, discarding line: , 10, Jonathan Demme, Silence of the Lambs, 1991
+Unknown movie type: D, discarding line: , 10, Clint Eastwood, Unforgiven, 1992
+Unknown movie type: C, discarding line: , 10, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
+Unknown movie type: Z, discarding line: , 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
+Unknown movie type: C, discarding line: , 10, George Cukor, Holiday, Katherine Hepburn 9 1938
+Unknown movie type: C, discarding line: , 10, George Cukor, Holiday, Cary Grant 9 1938
+Unknown movie type: C, discarding line: , 10, Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
+Unknown movie type: C, discarding line: , 10, Victor Fleming, Gone With the Wind, Clark Gable 2 1939
+Unknown movie type: C, discarding line: , 10, George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
+Unknown movie type: C, discarding line: , 10, George Cukor, The Philadelphia Story, Cary Grant 5 1940
+Unknown movie type: C, discarding line: , 10, John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
+Unknown movie type: Z, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+Unknown movie type: C, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+Unknown movie type: C, discarding line: , 10, Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
+Unknown movie type: C, discarding line: , 10, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971
+Unknown movie type: F, discarding line: , 10, John Landis, National Lampoon's Animal House, 1978
+Unknown movie type: D, discarding line: , 10, Nancy Savoca, Dogfight, 1991
+Unknown movie type: F, discarding line: , 10, Nora Ephron, You've Got Mail, 1998
 End testStoreFinal
 =====================================
 Done.
@@ -22,28 +93,36 @@ Done.
 3. clang-tidy warnings are fixed
    FIX all warnings if there are any shown below
 =====================================================
-[1/10] Processing file /home/cssuwbstudent/roshia3/343-movies/BorrowCommand.cpp.
-11579 warnings generated.
-[2/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Classic.cpp.
-23162 warnings generated.
-[3/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Comedy.cpp.
-34472 warnings generated.
-[4/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Command.cpp.
-34472 warnings generated.
-[5/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Customer.cpp.
-47491 warnings generated.
-[6/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Drama.cpp.
-58801 warnings generated.
-[7/10] Processing file /home/cssuwbstudent/roshia3/343-movies/Movie.cpp.
-70111 warnings generated.
-[8/10] Processing file /home/cssuwbstudent/roshia3/343-movies/MovieStore.cpp.
-87944 warnings generated.
-[9/10] Processing file /home/cssuwbstudent/roshia3/343-movies/main.cpp.
-99254 warnings generated.
-[10/10] Processing file /home/cssuwbstudent/roshia3/343-movies/store_test.cpp.
-113655 warnings generated.
-Suppressed 113655 warnings (113655 in non-user code).
+[1/12] Processing file /home/cssuwbstudent/343-movies/BorrowCommand.cpp.
+18616 warnings generated.
+[2/12] Processing file /home/cssuwbstudent/343-movies/Classic.cpp.
+37232 warnings generated.
+[3/12] Processing file /home/cssuwbstudent/343-movies/Comedy.cpp.
+55575 warnings generated.
+[4/12] Processing file /home/cssuwbstudent/343-movies/Customer.cpp.
+68608 warnings generated.
+[5/12] Processing file /home/cssuwbstudent/343-movies/Drama.cpp.
+86951 warnings generated.
+[6/12] Processing file /home/cssuwbstudent/343-movies/HistoryCommand.cpp.
+105566 warnings generated.
+[7/12] Processing file /home/cssuwbstudent/343-movies/InventoryCommand.cpp.
+124181 warnings generated.
+[8/12] Processing file /home/cssuwbstudent/343-movies/Movie.cpp.
+135478 warnings generated.
+[9/12] Processing file /home/cssuwbstudent/343-movies/MovieStore.cpp.
+154642 warnings generated.
+[10/12] Processing file /home/cssuwbstudent/343-movies/ReturnCommand.cpp.
+173258 warnings generated.
+[11/12] Processing file /home/cssuwbstudent/343-movies/main.cpp.
+184555 warnings generated.
+[12/12] Processing file /home/cssuwbstudent/343-movies/store_test.cpp.
+203894 warnings generated.
+/home/cssuwbstudent/343-movies/MovieStore.cpp:216:3: error: replace loop by 'std::any_of()' [readability-use-anyofallof,-warnings-as-errors]
+  216 |   for (char mt : mediaTypes) {
+      |   ^
+Suppressed 203893 warnings (203893 in non-user code).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+1 warning treated as error
 =====================================================
 4. Checking formatting using clang-format tool
    FIX all formatting issues if there are any shown below
@@ -51,11 +130,13 @@ Use -header-filter=.* to display errors from all non-system headers. Use -system
 Running clang-format on ./BorrowCommand.cpp
 Running clang-format on ./Classic.cpp
 Running clang-format on ./Comedy.cpp
-Running clang-format on ./Command.cpp
 Running clang-format on ./Customer.cpp
 Running clang-format on ./Drama.cpp
+Running clang-format on ./HistoryCommand.cpp
+Running clang-format on ./InventoryCommand.cpp
 Running clang-format on ./Movie.cpp
 Running clang-format on ./MovieStore.cpp
+Running clang-format on ./ReturnCommand.cpp
 Running clang-format on ./main.cpp
 Running clang-format on ./store_test.cpp
 =====================================================
@@ -67,22 +148,22 @@ Running clang-format on ./store_test.cpp
     If you get a message saying "definitely lost", fix it
     If you get a message saying "All heap blocks were freed -- no leaks are possible", you are good
 =====================================================
-==1114== Memcheck, a memory error detector
-==1114== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==1114== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==1114== Command: ./a.out
-==1114== Parent PID: 1012
-==1114== 
-==1114== 
-==1114== HEAP SUMMARY:
-==1114==     in use at exit: 0 bytes in 0 blocks
-==1114==   total heap usage: 6 allocs, 6 frees, 85,515 bytes allocated
-==1114== 
-==1114== All heap blocks were freed -- no leaks are possible
-==1114== 
-==1114== For lists of detected and suppressed errors, rerun with: -s
-==1114== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Wed Mar  4 00:09:50 UTC 2026
+==127006== Memcheck, a memory error detector
+==127006== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==127006== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==127006== Command: ./a.out
+==127006== Parent PID: 126670
+==127006== 
+==127006== 
+==127006== HEAP SUMMARY:
+==127006==     in use at exit: 0 bytes in 0 blocks
+==127006==   total heap usage: 1,235 allocs, 1,235 frees, 186,161 bytes allocated
+==127006== 
+==127006== All heap blocks were freed -- no leaks are possible
+==127006== 
+==127006== For lists of detected and suppressed errors, rerun with: -s
+==127006== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Sat Mar  7 00:33:49 UTC 2026
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command

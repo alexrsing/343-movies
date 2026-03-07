@@ -12,7 +12,7 @@ Customer *CustomerFactory::makeCustomer(std::string data) {
   std::string lastName;
 
   std::istringstream iss(data);
-  iss >> id >> firstName >> lastName;
+  iss >> id >> lastName >> firstName;
 
   return new Customer(id, firstName, lastName);
 }
