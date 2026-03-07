@@ -3,17 +3,20 @@
 #include <iostream>
 #include <sstream>
 
+// Registers the History command with the MovieStore
 static bool registered = [] {
   MovieStore::registerCommandFactory('H', new HistoryCommandFactory());
   return true;
 }();
 
+// Default constructor for HistoryCommandFactory
 HistoryCommandFactory::HistoryCommandFactory() {}
 
+// Creates a HistoryCommand from input command data
 Command *HistoryCommandFactory::createCommand(std::string data,
                                               MovieStore *store) const {
-  // parse data from input string into HistoryCommand constructor parameters
-  // skip command type character at start of line
+  // Parse data from input string into HistoryCommand constructor parameters
+  // Skip command type character at start of line
   if (data.length() < 2) {
     std::cout << "Invalid history command data: " << data << std::endl;
     return nullptr;
@@ -33,13 +36,14 @@ Command *HistoryCommandFactory::createCommand(std::string data,
   return new HistoryCommand(store, customer);
 }
 
+// Executes the history command and prints customer transactions
 void HistoryCommand::execute() {
-  // check that customer is valid --- this should not be necessary
+  // Check that customer is valid --- this should not be necessary
   if (customer == nullptr) {
     std::cout << "Customer not found" << std::endl;
     return;
   }
 
-  // print this customers transaction history
+  // Print this customers transaction history
   customer->printTransactions();
 }
