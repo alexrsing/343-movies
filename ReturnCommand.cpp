@@ -3,13 +3,16 @@
 #include <iostream>
 #include <sstream>
 
+// Registers the Return command factory with the MovieStore
 static bool registered = [] {
   MovieStore::registerCommandFactory('R', new ReturnCommandFactory());
   return true;
 }();
 
+// Constructor for ReturnCommandFactory
 ReturnCommandFactory::ReturnCommandFactory() {}
 
+// Creates a ReturnCommand from a line of command input
 Command *ReturnCommandFactory::createCommand(std::string data,
                                              MovieStore *store) const {
   // parse data from input string into ReturnCommand constructor parameters
@@ -62,6 +65,7 @@ Command *ReturnCommandFactory::createCommand(std::string data,
   return nullptr;
 }
 
+// Executes the return command and updates inventory and transaction history
 void ReturnCommand::execute() {
   MovieStore *store = getStore();
 
@@ -85,6 +89,7 @@ void ReturnCommand::execute() {
     return;
   }
 
+  // Attempt to return the movie and record the transaction
   if (store->returnMovie(customer, movie)) {
     customer->addTransaction('R', movie);
     return;
