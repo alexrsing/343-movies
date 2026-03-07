@@ -34,7 +34,8 @@ Movie *ComedyMovieFactory::makeMovie(std::string data) const {
 void Comedy::print() const {
   // Title, year, director, stock, genere
   std::cout << getTitle() << ", " << getYear() << ", " << getDirector() << " ("
-            << getStock() << ") - Comedy" << std::endl;
+            << getStock() << ") " << getBorrowed() << " out - Comedy"
+            << std::endl;
 }
 
 // Checks if two comedy movies represent the same movie

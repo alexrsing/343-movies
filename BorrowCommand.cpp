@@ -86,11 +86,6 @@ void BorrowCommand::execute() {
     return;
   }
 
-  // Attempt to borrow the movie and record the transaction
-  std::cout << "Debug: Borrow " << customer->getID() << " "
-            << customer->getLastName() << " " << customer->getFirstName()
-            << " ";
-  movie->print();
   if (store->borrowMovie(customer, movie)) {
     customer->addTransaction('B', movie);
     return;

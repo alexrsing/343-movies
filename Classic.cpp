@@ -58,7 +58,8 @@ void Classic::print() const {
   // Ex. 1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
   std::cout << getYear() << " " << getMonth() << ", " << getActorFirst() << " "
             << getActorLast() << ", " << getDirector() << ", " << getTitle()
-            << " (" << getStock() << ") - Classics" << std::endl;
+            << " (" << getStock() << ") " << getBorrowed() << " out - Classics"
+            << std::endl;
 }
 
 // Checks if two classic movies represent the same movie

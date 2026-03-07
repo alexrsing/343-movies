@@ -92,11 +92,6 @@ void ReturnCommand::execute() {
     return;
   }
 
-  // Attempt to return the movie and record the transaction
-  std::cout << "Debug: Return " << customer->getID() << " "
-            << customer->getLastName() << " " << customer->getFirstName()
-            << " ";
-  movie->print();
   if (store->returnMovie(customer, movie)) {
     customer->addTransaction('R', movie);
     return;
