@@ -18,6 +18,6 @@ int main() {
   // Run all movie store tests
   testAll();
 
-  cout << "Done." << endl;
+  cout << "Done!" << endl;
   return 0;
 }
