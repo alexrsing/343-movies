@@ -35,6 +35,8 @@ class Command {
 public:
   // Constructor storing a reference to the MovieStore
   explicit Command(MovieStore *store) : store(store) {}
+
+  // Virtual destructor for proper cleanup of derived command objects
   virtual ~Command() = default;
 
   // Executes the command action

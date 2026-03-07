@@ -43,11 +43,22 @@ Movie *ClassicMovieFactory::makeMovie(std::string data) const {
                      year);
 }
 
+// Returns the release month of the classic movie
+int Classic::getMonth() const { return month; }
+
+// Returns the major actor's first name
+std::string Classic::getActorFirst() const { return actorFirst; }
+
+// Returns the major actor's last name
+std::string Classic::getActorLast() const { return actorLast; }
+
 // Displays classic movie information including stock and actor
 void Classic::print() const {
-  std::cout << "Classic: " << getStock() << " in, " << getBorrowed() << " out, "
-            << getDirector() << ", " << getTitle() << ", " << actorFirst << " "
-            << actorLast << " " << month << " " << getYear() << std::endl;
+  // Month year, major actor first last, director, title, stock, genre
+  // Ex. 1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
+  std::cout << getYear() << getMonth() << ", " << getActorFirst() << " "
+            << getActorLast() << ", " << getDirector() << ", " << getTitle()
+            << "(" << getStock() << ") - " << getGenre() << std::endl;
 }
 
 // Checks if two classic movies represent the same movie
@@ -77,9 +88,6 @@ bool Classic::isEqual(const std::string &data) const {
   return month == m && getYear() == y && actorFirst == aFirst &&
          actorLast == aLast;
 }
-
-// Returns the release month of the classic movie
-int Classic::getMonth() const { return month; }
 
 // Defines sorting order for classic movies
 // Sorted by year, then month, then major actor name

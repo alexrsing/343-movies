@@ -3,8 +3,10 @@
 #include <sstream>
 #include <vector>
 
+// Static factory instance for creating Customer objects from input data
 CustomerFactory Customer::factory;
 
+// Parses a line of customer data and creates a Customer object
 Customer *CustomerFactory::makeCustomer(std::string data) {
   // parse data and set customer fields
   int id;
@@ -17,19 +19,20 @@ Customer *CustomerFactory::makeCustomer(std::string data) {
   return new Customer(id, firstName, lastName);
 }
 
-int Customer::getID() const {
-  //
-  return this->id;
-}
+// Returns the customer's ID
+int Customer::getID() const { return this->id; }
 
+// Adds a transaction to the customer's history
 void Customer::addTransaction(char key, Movie *movie) {
   transactions.emplace_back(key, movie);
 }
 
+// Returns the customer's transaction history
 std::vector<std::pair<char, Movie *>> Customer::getTransactions() const {
   return transactions;
 }
 
+// Checks if the customer has currently borrowed the given movie
 bool Customer::hasBorrowed(Movie *movie) const {
   int borrowCount = 0;
   for (const auto &t : transactions) {
@@ -44,6 +47,7 @@ bool Customer::hasBorrowed(Movie *movie) const {
   return borrowCount > 0;
 }
 
+// Prints the customer's transaction history
 void Customer::printTransactions() const {
   std::cout << "Transaction history for " << firstName << " " << lastName
             << " (ID: " << id << "):" << std::endl;

@@ -1,5 +1,5 @@
-Sat Mar  7 11:28:41 UTC 2026
-Linux LinuxMachine 6.10.14-linuxkit #1 SMP Wed Sep 10 06:47:45 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+Sat Mar  7 19:56:23 UTC 2026
+Linux LinuxMachine 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
 uid=1000(cssuwbstudent) gid=1000(cssuwbstudent) groups=1000(cssuwbstudent),10(wheel)
 =====================================================
 1. Compiles without warnings with -Wall -Wextra flags
@@ -53,6 +53,42 @@ Classic: 10 in, 0 out, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1
 Classic: 10 in, 0 out, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
 End testStore2
 =====================================
+Start testStore3
+Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
+Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
+Unknown movie type: C, discarding line: , 10, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
+Unknown movie type: F, discarding line: , 10, Nora Ephron, Sleepless in Seattle, 1993
+Unknown movie type: D, discarding line: , 10, Barry Levinson, Good Morning Vietnam, 1988
+Unknown movie type: D, discarding line: , 10, Barry Levinson, Same Director Good Morning Vietnam, 1988
+Unknown movie type: D, discarding line: , 10, Gus Van Sant, Good Will Hunting, 2000
+Unknown movie type: F, discarding line: , 10, Woody Allen, Annie Hall, 1977
+Unknown movie type: F, discarding line: , 10, Rob Reiner, When Harry Met Sally, 1989
+Unknown movie type: D, discarding line: , 10, Phillippe De Broca, King of Hearts, 1967
+Unknown movie type: D, discarding line: , 10, Steven Spielberg, Schindler's List, 1993
+Unknown movie type: F, discarding line: , 10, Gore Verbinski, Pirates of the Caribbean, 2003
+Unknown movie type: F, discarding line: , 10, Different Years, Pirates of the Caribbean, 2000
+Unknown movie type: F, discarding line: , 10, Joel Coen, Fargo, 1996
+Unknown movie type: D, discarding line: , 10, Jonathan Demme, Silence of the Lambs, 1991
+Unknown movie type: D, discarding line: , 10, Clint Eastwood, Unforgiven, 1992
+Unknown movie type: C, discarding line: , 10, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
+Unknown movie type: Z, discarding line: , 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
+Unknown movie type: C, discarding line: , 10, George Cukor, Holiday, Katherine Hepburn 9 1938
+Unknown movie type: C, discarding line: , 10, George Cukor, Holiday, Cary Grant 9 1938
+Unknown movie type: C, discarding line: , 10, Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
+Unknown movie type: C, discarding line: , 10, Victor Fleming, Gone With the Wind, Clark Gable 2 1939
+Unknown movie type: C, discarding line: , 10, George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
+Unknown movie type: C, discarding line: , 10, George Cukor, The Philadelphia Story, Cary Grant 5 1940
+Unknown movie type: C, discarding line: , 10, John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
+Unknown movie type: Z, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+Unknown movie type: C, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
+Unknown movie type: C, discarding line: , 10, Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
+Unknown movie type: C, discarding line: , 10, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971
+Unknown movie type: F, discarding line: , 10, John Landis, National Lampoon's Animal House, 1978
+Unknown movie type: D, discarding line: , 10, Nancy Savoca, Dogfight, 1991
+Unknown movie type: F, discarding line: , 10, Nora Ephron, You've Got Mail, 1998
+End testStore3
+=====================================
+=====================================
 Start testStoreFinal
 Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
 Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
@@ -86,38 +122,37 @@ Unknown movie type: C, discarding line: , 10, Stanley Kubrick, A Clockwork Orang
 Unknown movie type: F, discarding line: , 10, John Landis, National Lampoon's Animal House, 1978
 Unknown movie type: D, discarding line: , 10, Nancy Savoca, Dogfight, 1991
 Unknown movie type: F, discarding line: , 10, Nora Ephron, You've Got Mail, 1998
-End testStoreFinal
-=====================================
-Done.
+a.out: store_test.cpp:272: void testStoreFinal(): Assertion `!comedies.empty()' failed.
+./run-full.sh: line 71: 36715 Aborted                 (core dumped) $EXEC_PROGRAM
 =====================================================
 3. clang-tidy warnings are fixed
    FIX all warnings if there are any shown below
 =====================================================
-[1/12] Processing file /home/cssuwbstudent/roshia3/343-movies/BorrowCommand.cpp.
-18630 warnings generated.
-[2/12] Processing file /home/cssuwbstudent/roshia3/343-movies/Classic.cpp.
-37259 warnings generated.
-[3/12] Processing file /home/cssuwbstudent/roshia3/343-movies/Comedy.cpp.
-55615 warnings generated.
-[4/12] Processing file /home/cssuwbstudent/roshia3/343-movies/Customer.cpp.
-68662 warnings generated.
-[5/12] Processing file /home/cssuwbstudent/roshia3/343-movies/Drama.cpp.
-87018 warnings generated.
-[6/12] Processing file /home/cssuwbstudent/roshia3/343-movies/HistoryCommand.cpp.
-105647 warnings generated.
-[7/12] Processing file /home/cssuwbstudent/roshia3/343-movies/InventoryCommand.cpp.
-124276 warnings generated.
-[8/12] Processing file /home/cssuwbstudent/roshia3/343-movies/Movie.cpp.
-135586 warnings generated.
-[9/12] Processing file /home/cssuwbstudent/roshia3/343-movies/MovieStore.cpp.
-154763 warnings generated.
-[10/12] Processing file /home/cssuwbstudent/roshia3/343-movies/ReturnCommand.cpp.
-173393 warnings generated.
-[11/12] Processing file /home/cssuwbstudent/roshia3/343-movies/main.cpp.
-184703 warnings generated.
-[12/12] Processing file /home/cssuwbstudent/roshia3/343-movies/store_test.cpp.
-204056 warnings generated.
-Suppressed 204056 warnings (204056 in non-user code).
+[1/12] Processing file /home/cssuwbstudent/343-movies/BorrowCommand.cpp.
+18616 warnings generated.
+[2/12] Processing file /home/cssuwbstudent/343-movies/Classic.cpp.
+37232 warnings generated.
+[3/12] Processing file /home/cssuwbstudent/343-movies/Comedy.cpp.
+55575 warnings generated.
+[4/12] Processing file /home/cssuwbstudent/343-movies/Customer.cpp.
+68608 warnings generated.
+[5/12] Processing file /home/cssuwbstudent/343-movies/Drama.cpp.
+86951 warnings generated.
+[6/12] Processing file /home/cssuwbstudent/343-movies/HistoryCommand.cpp.
+105566 warnings generated.
+[7/12] Processing file /home/cssuwbstudent/343-movies/InventoryCommand.cpp.
+124181 warnings generated.
+[8/12] Processing file /home/cssuwbstudent/343-movies/Movie.cpp.
+135478 warnings generated.
+[9/12] Processing file /home/cssuwbstudent/343-movies/MovieStore.cpp.
+154641 warnings generated.
+[10/12] Processing file /home/cssuwbstudent/343-movies/ReturnCommand.cpp.
+173257 warnings generated.
+[11/12] Processing file /home/cssuwbstudent/343-movies/main.cpp.
+184554 warnings generated.
+[12/12] Processing file /home/cssuwbstudent/343-movies/store_test.cpp.
+203893 warnings generated.
+Suppressed 203893 warnings (203893 in non-user code).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
 =====================================================
 4. Checking formatting using clang-format tool
@@ -127,39 +162,115 @@ Running clang-format on ./BorrowCommand.cpp
 Running clang-format on ./Classic.cpp
 Running clang-format on ./Comedy.cpp
 Running clang-format on ./Customer.cpp
+23,25c23
+< int Customer::getID() const {
+<   return this->id;
+< }
+---
+> int Customer::getID() const { return this->id; }
 Running clang-format on ./Drama.cpp
 Running clang-format on ./HistoryCommand.cpp
 Running clang-format on ./InventoryCommand.cpp
 Running clang-format on ./Movie.cpp
+8,10c8
+< std::string Movie::getTitle() const {
+<   return title;
+< }
+---
+> std::string Movie::getTitle() const { return title; }
+15,17c13
+< std::string Movie::getDirector() const {
+<   return director;
+< }
+---
+> std::string Movie::getDirector() const { return director; }
+22,24c18
+< char Movie::getGenre() const {
+<   return genre;
+< }
+---
+> char Movie::getGenre() const { return genre; }
+29,31c23
+< int Movie::getStock() const {
+<   return stock;
+< }
+---
+> int Movie::getStock() const { return stock; }
+36,38c28
+< int Movie::getBorrowed() const {
+<   return initialStock - stock;
+< }
+---
+> int Movie::getBorrowed() const { return initialStock - stock; }
+43,45c33
+< int Movie::getYear() const {
+<   return year;
+< }
+---
+> int Movie::getYear() const { return year; }
+71,73c59
+< bool Movie::isAvailable() const {
+<   return stock > 0;
+< }
+\ No newline at end of file
+---
+> bool Movie::isAvailable() const { return stock > 0; }
+\ No newline at end of file
 Running clang-format on ./MovieStore.cpp
 Running clang-format on ./ReturnCommand.cpp
 Running clang-format on ./main.cpp
 Running clang-format on ./store_test.cpp
+8d7
+< #include "MovieStore.h"
+9a9
+> #include "MovieStore.h"
+386c386
+<   testStore2();  
+---
+>   testStore2();
 =====================================================
 5. Checking for memory leaks using g++
    FIX all memory leaks if there are any shown below
 =====================================================
+./run-full.sh: line 110: 36902 Aborted                 (core dumped) $EXEC_PROGRAM > /dev/null 2> /dev/null
 =====================================================
 6. Checking for memory leaks using valgrind
     If you get a message saying "definitely lost", fix it
     If you get a message saying "All heap blocks were freed -- no leaks are possible", you are good
 =====================================================
-==786== Memcheck, a memory error detector
-==786== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==786== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==786== Command: ./a.out
-==786== Parent PID: 668
-==786== 
-==786== 
-==786== HEAP SUMMARY:
-==786==     in use at exit: 0 bytes in 0 blocks
-==786==   total heap usage: 1,235 allocs, 1,235 frees, 186,161 bytes allocated
-==786== 
-==786== All heap blocks were freed -- no leaks are possible
-==786== 
-==786== For lists of detected and suppressed errors, rerun with: -s
-==786== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Sat Mar  7 11:29:02 UTC 2026
+./run-full.sh: line 129: 36955 Aborted                 (core dumped) valgrind --log-file="valgrind-output.txt" $EXEC_PROGRAM > /dev/null 2> /dev/null
+==36955== Memcheck, a memory error detector
+==36955== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==36955== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==36955== Command: ./a.out
+==36955== Parent PID: 36640
+==36955== 
+==36955== 
+==36955== Process terminating with default action of signal 6 (SIGABRT)
+==36955==    at 0x4C0DA6C: __pthread_kill_implementation (in /usr/lib64/libc.so.6)
+==36955==    by 0x4BC0685: raise (in /usr/lib64/libc.so.6)
+==36955==    by 0x4BAA832: abort (in /usr/lib64/libc.so.6)
+==36955==    by 0x4BAA75A: __assert_fail_base.cold (in /usr/lib64/libc.so.6)
+==36955==    by 0x4BB93C5: __assert_fail (in /usr/lib64/libc.so.6)
+==36955==    by 0x41E5D7: testStoreFinal() (store_test.cpp:272)
+==36955==    by 0x41F4D2: testAll() (store_test.cpp:388)
+==36955==    by 0x41C428: main (main.cpp:19)
+==36955== 
+==36955== HEAP SUMMARY:
+==36955==     in use at exit: 88,033 bytes in 31 blocks
+==36955==   total heap usage: 1,328 allocs, 1,297 frees, 217,367 bytes allocated
+==36955== 
+==36955== LEAK SUMMARY:
+==36955==    definitely lost: 0 bytes in 0 blocks
+==36955==    indirectly lost: 0 bytes in 0 blocks
+==36955==      possibly lost: 0 bytes in 0 blocks
+==36955==    still reachable: 88,033 bytes in 31 blocks
+==36955==         suppressed: 0 bytes in 0 blocks
+==36955== Rerun with --leak-check=full to see details of leaked memory
+==36955== 
+==36955== For lists of detected and suppressed errors, rerun with: -s
+==36955== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Sat Mar  7 19:56:42 UTC 2026
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command

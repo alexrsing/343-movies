@@ -33,9 +33,10 @@ Movie *DramaMovieFactory::makeMovie(std::string data) const {
 
 // Displays drama movie information including stock and year
 void Drama::print() const {
-  std::cout << "Drama: " << getStock() << " in, " << getBorrowed() << " out, "
-            << getDirector() << ", " << getTitle() << ", " << getYear()
-            << std::endl;
+  // Director, title, year (stock) - Drama
+  // Ex. Phillippe De Broca, King of Hearts, 1967 (10) - Drama
+  std::cout << getDirector() << ", " << getTitle() << ", " << getYear() << "("
+            << getStock() << ") - " << "Drama" << std::endl;
 }
 
 // Checks if two drama movies represent the same movie

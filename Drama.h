@@ -9,6 +9,7 @@ from inventory file input data.
 */
 class DramaMovieFactory : public MovieFactory {
 public:
+  // Creates a Drama movie object from a line of input data
   Movie *makeMovie(std::string data) const override;
 };
 
@@ -37,10 +38,10 @@ public:
   // Compares this movie with another movie object
   bool isEqual(const Movie &other) const override;
 
-  // Comparison operator used for sorting drama movies
+  // Comparison operator that compares by movie data from input line
   bool isEqual(const std::string &data) const override;
 
-  // Comparison operator used for sorting drama movies
+  // Comparison operator that compares with other Movie object
   bool operator>(const Movie &other) const override;
 };
 

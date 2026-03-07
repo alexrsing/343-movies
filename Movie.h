@@ -42,8 +42,6 @@ private:
   int year;
 
 public:
-  virtual ~Movie() = default;
-
   /**
    * Constructs a Movie object.
    *
@@ -54,6 +52,9 @@ public:
         int year)
       : title(title), director(director), genre(genre), stock(stock),
         initialStock(stock), year(year) {};
+
+  // Virtual destructor for proper cleanup of derived movie objects
+  virtual ~Movie() = default;
 
   // Getter functions
 

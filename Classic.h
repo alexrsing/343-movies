@@ -9,6 +9,7 @@ from inventory file input data.
 */
 class ClassicMovieFactory : public MovieFactory {
 public:
+  // Creates a Classic movie object from a line of input data
   Movie *makeMovie(std::string data) const override;
 };
 
@@ -43,6 +44,15 @@ public:
       : Movie(title, director, 'C', stock, year), actorFirst(actorFirst),
         actorLast(actorLast), month(month) {}
 
+  // Returns the release month
+  int getMonth() const;
+
+  // Returns actor first name
+  std::string getActorFirst() const;
+
+  // Returns actor last name
+  std::string getActorLast() const;
+
   // Print the classic movie's information
   void print() const override;
 
@@ -51,9 +61,6 @@ public:
 
   // Compares movie with parsed input data
   bool isEqual(const std::string &data) const override;
-
-  // Returns the release month
-  int getMonth() const;
 
   // Comparison operator used for sorting classic movies
   bool operator>(const Movie &other) const override;
