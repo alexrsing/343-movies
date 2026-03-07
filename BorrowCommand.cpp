@@ -49,7 +49,8 @@ Command *BorrowCommandFactory::createCommand(std::string data,
   // Use store parameter to look up movie and customer
   Customer *customer = store->getCustomer(customerID);
   if (customer == nullptr) {
-    std::cout << "Customer " << customerID << " not found" << std::endl;
+    std::cout << "Invalid customer ID " << customerID << ", discarding line: "
+              << " " << mediaType << " " << movieType << movieData << std::endl;
     return nullptr;
   }
 
@@ -61,7 +62,9 @@ Command *BorrowCommandFactory::createCommand(std::string data,
   }
 
   // data does not match customer or movie
-  std::cout << "Invalid borrow command data: " << data << std::endl;
+  std::cout << "Invalid movie " << " for customer " << customer->getLastName()
+            << " " << customer->getFirstName()
+            << ", discarding line: " << std::endl;
   return nullptr;
 }
 
@@ -84,11 +87,17 @@ void BorrowCommand::execute() {
   }
 
   // Attempt to borrow the movie and record the transaction
+  std::cout << "Debug: Borrow " << customer->getID() << " "
+            << customer->getLastName() << " " << customer->getFirstName()
+            << " ";
+  movie->print();
   if (store->borrowMovie(customer, movie)) {
     customer->addTransaction('B', movie);
     return;
   }
 
   // Movie could not be borrowed because it is unavailable
-  std::cout << "Movie not available for borrowing" << std::endl;
+  std::cout << "Failed to execute command: Borrow " << customer->getLastName()
+            << " " << customer->getFirstName() << " " << movie->getTitle()
+            << std::endl;
 }

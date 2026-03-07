@@ -1,4 +1,4 @@
-Sat Mar  7 19:56:23 UTC 2026
+Sat Mar  7 21:49:08 UTC 2026
 Linux LinuxMachine 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
 uid=1000(cssuwbstudent) gid=1000(cssuwbstudent) groups=1000(cssuwbstudent),10(wheel)
 =====================================================
@@ -14,116 +14,232 @@ End testStore1
 Start testStore2
 Unknown movie type: Z, discarding line: , 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
 Unknown movie type: Z, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
-Invalid movie type Z, discarding line:  2 1971 Malcolm McDowell
-Unknown command type: X, discarding line: 
-Unknown command type: Z, discarding line:  1000 D C 10 1941 Humphrey Bogart
-Customer 1234 not found
-Invalid borrow command data: B 1000 D F Bogus Title, 2001
-Invalid media type Z, discarding line:  Fargo, 1996
-Invalid borrow command data: B 1000 D D Steven Spielberg, Bogus Title,
-Comedy: 10 in, 0 out, Woody Allen, Annie Hall, 1977
-Comedy: 10 in, 0 out, Joel Coen, Fargo, 1996
-Comedy: 10 in, 0 out, John Landis, National Lampoon's Animal House, 1978
-Comedy: 10 in, 0 out, Different Years, Pirates of the Caribbean, 2000
-Comedy: 10 in, 0 out, Gore Verbinski, Pirates of the Caribbean, 2003
-Comedy: 10 in, 0 out, Nora Ephron, Sleepless in Seattle, 1993
-Comedy: 10 in, 0 out, Rob Reiner, When Harry Met Sally, 1989
-Comedy: 10 in, 0 out, Nora Ephron, You've Got Mail, 1998
-Drama: 10 in, 0 out, Barry Levinson, Good Morning Vietnam, 1988
-Drama: 10 in, 0 out, Barry Levinson, Same Director Good Morning Vietnam, 1988
-Drama: 10 in, 0 out, Clint Eastwood, Unforgiven, 1992
-Drama: 10 in, 0 out, Gus Van Sant, Good Will Hunting, 2000
-Drama: 10 in, 0 out, Jonathan Demme, Silence of the Lambs, 1991
-Drama: 10 in, 0 out, Nancy Savoca, Dogfight, 1991
-Drama: 10 in, 0 out, Phillippe De Broca, King of Hearts, 1967
-Drama: 10 in, 0 out, Steven Spielberg, Schindler's List, 1993
-Classic: 10 in, 0 out, George Cukor, Holiday, Cary Grant 9 1938
-Classic: 10 in, 0 out, George Cukor, Holiday, Katherine Hepburn 9 1938
-Classic: 10 in, 0 out, Victor Fleming, Gone With the Wind, Clark Gable 2 1939
-Classic: 10 in, 0 out, Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
-Classic: 10 in, 0 out, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
-Classic: 10 in, 0 out, George Cukor, The Philadelphia Story, Cary Grant 5 1940
-Classic: 10 in, 0 out, George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
-Classic: 10 in, 0 out, John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
-Classic: 10 in, 0 out, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
-Classic: 10 in, 0 out, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
-Classic: 10 in, 0 out, Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
-Classic: 10 in, 0 out, Frank Capra, It's a Wonderful Life, James Steward 11 1946
-Classic: 10 in, 0 out, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971
-Classic: 10 in, 0 out, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
+Annie Hall, 1977, Woody Allen (10) - Comedy
+Fargo, 1996, Joel Coen (10) - Comedy
+National Lampoon's Animal House, 1978, John Landis (10) - Comedy
+Pirates of the Caribbean, 2000, Different Years (10) - Comedy
+Pirates of the Caribbean, 2003, Gore Verbinski (10) - Comedy
+Sleepless in Seattle, 1993, Nora Ephron (10) - Comedy
+When Harry Met Sally, 1989, Rob Reiner (10) - Comedy
+You've Got Mail, 1998, Nora Ephron (10) - Comedy
+Barry Levinson, Good Morning Vietnam, 1988 (10) - Drama
+Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) - Drama
+Clint Eastwood, Unforgiven, 1992 (10) - Drama
+Gus Van Sant, Good Will Hunting, 2000 (10) - Drama
+Jonathan Demme, Silence of the Lambs, 1991 (10) - Drama
+Nancy Savoca, Dogfight, 1991 (10) - Drama
+Phillippe De Broca, King of Hearts, 1967 (10) - Drama
+Steven Spielberg, Schindler's List, 1993 (10) - Drama
+1938 9, Cary Grant, George Cukor, Holiday (10) - Classics
+1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
+1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) - Classics
+1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) - Classics
+1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) - Classics
+1940 5, Cary Grant, George Cukor, The Philadelphia Story (10) - Classics
+1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10) - Classics
+1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (10) - Classics
+1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) - Classics
+1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) - Classics
+1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) - Classics
+1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) - Classics
+1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10) - Classics
+1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
 End testStore2
 =====================================
 Start testStore3
-Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
-Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
-Unknown movie type: C, discarding line: , 10, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
-Unknown movie type: F, discarding line: , 10, Nora Ephron, Sleepless in Seattle, 1993
-Unknown movie type: D, discarding line: , 10, Barry Levinson, Good Morning Vietnam, 1988
-Unknown movie type: D, discarding line: , 10, Barry Levinson, Same Director Good Morning Vietnam, 1988
-Unknown movie type: D, discarding line: , 10, Gus Van Sant, Good Will Hunting, 2000
-Unknown movie type: F, discarding line: , 10, Woody Allen, Annie Hall, 1977
-Unknown movie type: F, discarding line: , 10, Rob Reiner, When Harry Met Sally, 1989
-Unknown movie type: D, discarding line: , 10, Phillippe De Broca, King of Hearts, 1967
-Unknown movie type: D, discarding line: , 10, Steven Spielberg, Schindler's List, 1993
-Unknown movie type: F, discarding line: , 10, Gore Verbinski, Pirates of the Caribbean, 2003
-Unknown movie type: F, discarding line: , 10, Different Years, Pirates of the Caribbean, 2000
-Unknown movie type: F, discarding line: , 10, Joel Coen, Fargo, 1996
-Unknown movie type: D, discarding line: , 10, Jonathan Demme, Silence of the Lambs, 1991
-Unknown movie type: D, discarding line: , 10, Clint Eastwood, Unforgiven, 1992
-Unknown movie type: C, discarding line: , 10, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
-Unknown movie type: Z, discarding line: , 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
-Unknown movie type: C, discarding line: , 10, George Cukor, Holiday, Katherine Hepburn 9 1938
-Unknown movie type: C, discarding line: , 10, George Cukor, Holiday, Cary Grant 9 1938
-Unknown movie type: C, discarding line: , 10, Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
-Unknown movie type: C, discarding line: , 10, Victor Fleming, Gone With the Wind, Clark Gable 2 1939
-Unknown movie type: C, discarding line: , 10, George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
-Unknown movie type: C, discarding line: , 10, George Cukor, The Philadelphia Story, Cary Grant 5 1940
-Unknown movie type: C, discarding line: , 10, John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
-Unknown movie type: Z, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
-Unknown movie type: C, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
-Unknown movie type: C, discarding line: , 10, Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
-Unknown movie type: C, discarding line: , 10, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971
-Unknown movie type: F, discarding line: , 10, John Landis, National Lampoon's Animal House, 1978
-Unknown movie type: D, discarding line: , 10, Nancy Savoca, Dogfight, 1991
-Unknown movie type: F, discarding line: , 10, Nora Ephron, You've Got Mail, 1998
+==========================
+Duck Daffy could NOT borrow Annie Hall, out of stock: 
+==========================
 End testStore3
 =====================================
 =====================================
 Start testStoreFinal
-Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Ingrid Bergman 8 1942
-Unknown movie type: C, discarding line: , 10, Michael Curtiz, Casablanca, Humphrey Bogart 8 1942
-Unknown movie type: C, discarding line: , 10, Victor Fleming, The Wizard of Oz, Judy Garland 7 1939
-Unknown movie type: F, discarding line: , 10, Nora Ephron, Sleepless in Seattle, 1993
-Unknown movie type: D, discarding line: , 10, Barry Levinson, Good Morning Vietnam, 1988
-Unknown movie type: D, discarding line: , 10, Barry Levinson, Same Director Good Morning Vietnam, 1988
-Unknown movie type: D, discarding line: , 10, Gus Van Sant, Good Will Hunting, 2000
-Unknown movie type: F, discarding line: , 10, Woody Allen, Annie Hall, 1977
-Unknown movie type: F, discarding line: , 10, Rob Reiner, When Harry Met Sally, 1989
-Unknown movie type: D, discarding line: , 10, Phillippe De Broca, King of Hearts, 1967
-Unknown movie type: D, discarding line: , 10, Steven Spielberg, Schindler's List, 1993
-Unknown movie type: F, discarding line: , 10, Gore Verbinski, Pirates of the Caribbean, 2003
-Unknown movie type: F, discarding line: , 10, Different Years, Pirates of the Caribbean, 2000
-Unknown movie type: F, discarding line: , 10, Joel Coen, Fargo, 1996
-Unknown movie type: D, discarding line: , 10, Jonathan Demme, Silence of the Lambs, 1991
-Unknown movie type: D, discarding line: , 10, Clint Eastwood, Unforgiven, 1992
-Unknown movie type: C, discarding line: , 10, Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
-Unknown movie type: Z, discarding line: , 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
-Unknown movie type: C, discarding line: , 10, George Cukor, Holiday, Katherine Hepburn 9 1938
-Unknown movie type: C, discarding line: , 10, George Cukor, Holiday, Cary Grant 9 1938
-Unknown movie type: C, discarding line: , 10, Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
-Unknown movie type: C, discarding line: , 10, Victor Fleming, Gone With the Wind, Clark Gable 2 1939
-Unknown movie type: C, discarding line: , 10, George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
-Unknown movie type: C, discarding line: , 10, George Cukor, The Philadelphia Story, Cary Grant 5 1940
-Unknown movie type: C, discarding line: , 10, John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
-Unknown movie type: Z, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
-Unknown movie type: C, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
-Unknown movie type: C, discarding line: , 10, Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
-Unknown movie type: C, discarding line: , 10, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971
-Unknown movie type: F, discarding line: , 10, John Landis, National Lampoon's Animal House, 1978
-Unknown movie type: D, discarding line: , 10, Nancy Savoca, Dogfight, 1991
-Unknown movie type: F, discarding line: , 10, Nora Ephron, You've Got Mail, 1998
-a.out: store_test.cpp:272: void testStoreFinal(): Assertion `!comedies.empty()' failed.
-./run-full.sh: line 71: 36715 Aborted                 (core dumped) $EXEC_PROGRAM
+History for 8888 Pig Porky:
+Borrow Pig Porky Annie Hall
+Return Pig Porky Annie Hall
+Borrow Pig Porky Annie Hall
+Return Pig Porky Annie Hall
+Invalid movie type Z, discarding line:  2 1971 Malcolm McDowell
+Unknown command type: X, discarding line: 
+Unknown command type: Z, discarding line:  1000 D C 10 1941 Humphrey Bogart
+Invalid customer ID 1234, discarding line:  D C 2 1971 Malcolm McDowell
+Invalid movie  for customer Mouse Minnie, discarding line: 
+Invalid media type Z, discarding line:  Fargo, 1996
+Invalid movie  for customer Mouse Minnie, discarding line: 
+Annie Hall, 1977, Woody Allen (1) - Comedy
+Fargo, 1996, Joel Coen (10) - Comedy
+National Lampoon's Animal House, 1978, John Landis (10) - Comedy
+Pirates of the Caribbean, 2000, Different Years (10) - Comedy
+Pirates of the Caribbean, 2003, Gore Verbinski (10) - Comedy
+Sleepless in Seattle, 1993, Nora Ephron (10) - Comedy
+When Harry Met Sally, 1989, Rob Reiner (10) - Comedy
+You've Got Mail, 1998, Nora Ephron (10) - Comedy
+Barry Levinson, Good Morning Vietnam, 1988 (10) - Drama
+Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) - Drama
+Clint Eastwood, Unforgiven, 1992 (10) - Drama
+Gus Van Sant, Good Will Hunting, 2000 (10) - Drama
+Jonathan Demme, Silence of the Lambs, 1991 (10) - Drama
+Nancy Savoca, Dogfight, 1991 (10) - Drama
+Phillippe De Broca, King of Hearts, 1967 (10) - Drama
+Steven Spielberg, Schindler's List, 1993 (8) - Drama
+1938 9, Cary Grant, George Cukor, Holiday (10) - Classics
+1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
+1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) - Classics
+1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) - Classics
+1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) - Classics
+1940 5, Cary Grant, George Cukor, The Philadelphia Story (10) - Classics
+1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10) - Classics
+1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (10) - Classics
+1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) - Classics
+1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) - Classics
+1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) - Classics
+1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) - Classics
+1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10) - Classics
+1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
+Debug: History for 1000 Mouse Minnie
+==========================
+History for 1000 Mouse Minnie:
+No history for Mouse Minnie
+Debug: History for 5000 Frog Freddie
+==========================
+History for 5000 Frog Freddie:
+No history for Frog Freddie
+Debug: History for 8000 Wacky Wally
+==========================
+History for 8000 Wacky Wally:
+No history for Wacky Wally
+Debug: Borrow 8000 Wacky Wally You've Got Mail, 1998, Nora Ephron (10) - Comedy
+Debug: Borrow 1000 Mouse Minnie Barry Levinson, Good Morning Vietnam, 1988 (10) - Drama
+Debug: Borrow 1000 Mouse Minnie 1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10) - Classics
+Debug: Borrow 2000 Duck Donald Sleepless in Seattle, 1993, Nora Ephron (10) - Comedy
+Debug: Borrow 4444 Moose Bullwinkle 1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10) - Classics
+Debug: Borrow 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
+Debug: Return 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (9) - Classics
+Debug: Borrow 8888 Pig Porky Annie Hall, 1977, Woody Allen (1) - Comedy
+Debug: Borrow 1111 Mouse Mickey 1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (9) - Classics
+Debug: Borrow 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
+Debug: Return 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (9) - Classics
+Debug: Borrow 1000 Mouse Minnie Gus Van Sant, Good Will Hunting, 2000 (10) - Drama
+Debug: Borrow 2000 Duck Donald Phillippe De Broca, King of Hearts, 1967 (10) - Drama
+Debug: Return 4444 Moose Bullwinkle 1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (8) - Classics
+Debug: Borrow 1000 Mouse Minnie 1940 5, Cary Grant, George Cukor, The Philadelphia Story (10) - Classics
+Debug: Borrow 1111 Mouse Mickey 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
+Debug: Borrow 1000 Mouse Minnie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (9) - Classics
+Debug: Borrow 8888 Pig Porky When Harry Met Sally, 1989, Rob Reiner (10) - Comedy
+Debug: Borrow 8888 Pig Porky Jonathan Demme, Silence of the Lambs, 1991 (10) - Drama
+Debug: Return 8000 Wacky Wally You've Got Mail, 1998, Nora Ephron (9) - Comedy
+Debug: Borrow 9999 Duck Daffy You've Got Mail, 1998, Nora Ephron (10) - Comedy
+Debug: Borrow 8000 Wacky Wally 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (8) - Classics
+Debug: Borrow 1111 Mouse Mickey 1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (10) - Classics
+Debug: Borrow 8000 Wacky Wally 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (7) - Classics
+Debug: Borrow 1111 Mouse Mickey 1938 9, Cary Grant, George Cukor, Holiday (10) - Classics
+Debug: Borrow 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (6) - Classics
+Debug: Borrow 8888 Pig Porky Nancy Savoca, Dogfight, 1991 (10) - Drama
+Debug: Borrow 7777 Spider Sammy Steven Spielberg, Schindler's List, 1993 (8) - Drama
+Debug: Return 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (5) - Classics
+Debug: Borrow 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (6) - Classics
+Debug: Borrow 8000 Wacky Wally National Lampoon's Animal House, 1978, John Landis (10) - Comedy
+Debug: Borrow 8888 Pig Porky 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (5) - Classics
+Debug: Borrow 7777 Spider Sammy 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (4) - Classics
+Debug: Borrow 2000 Duck Donald 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (3) - Classics
+Debug: Borrow 2000 Duck Donald Nancy Savoca, Dogfight, 1991 (9) - Drama
+Debug: Borrow 9000 Lizard Larry Clint Eastwood, Unforgiven, 1992 (10) - Drama
+Debug: Borrow 9000 Lizard Larry Fargo, 1996, Joel Coen (10) - Comedy
+Debug: Borrow 2000 Duck Donald 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (2) - Classics
+Debug: Borrow 9000 Lizard Larry 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (1) - Classics
+Debug: Borrow 9000 Lizard Larry 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) - Classics
+==========================
+Lizard Larry could NOT borrow Harold and Maude, out of stock: 
+==========================
+Failed to execute command: Borrow Lizard Larry Harold and Maude
+Debug: Borrow 3333 Witch Wicked 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) - Classics
+==========================
+Witch Wicked could NOT borrow Harold and Maude, out of stock: 
+==========================
+Failed to execute command: Borrow Witch Wicked Harold and Maude
+Debug: Borrow 7777 Spider Sammy 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) - Classics
+==========================
+Spider Sammy could NOT borrow Harold and Maude, out of stock: 
+==========================
+Failed to execute command: Borrow Spider Sammy Harold and Maude
+Annie Hall, 1977, Woody Allen (0) - Comedy
+Fargo, 1996, Joel Coen (9) - Comedy
+National Lampoon's Animal House, 1978, John Landis (9) - Comedy
+Pirates of the Caribbean, 2000, Different Years (10) - Comedy
+Pirates of the Caribbean, 2003, Gore Verbinski (10) - Comedy
+Sleepless in Seattle, 1993, Nora Ephron (9) - Comedy
+When Harry Met Sally, 1989, Rob Reiner (9) - Comedy
+You've Got Mail, 1998, Nora Ephron (9) - Comedy
+Barry Levinson, Good Morning Vietnam, 1988 (9) - Drama
+Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) - Drama
+Clint Eastwood, Unforgiven, 1992 (9) - Drama
+Gus Van Sant, Good Will Hunting, 2000 (9) - Drama
+Jonathan Demme, Silence of the Lambs, 1991 (9) - Drama
+Nancy Savoca, Dogfight, 1991 (8) - Drama
+Phillippe De Broca, King of Hearts, 1967 (9) - Drama
+Steven Spielberg, Schindler's List, 1993 (7) - Drama
+1938 9, Cary Grant, George Cukor, Holiday (9) - Classics
+1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
+1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) - Classics
+1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) - Classics
+1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) - Classics
+1940 5, Cary Grant, George Cukor, The Philadelphia Story (9) - Classics
+1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (9) - Classics
+1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (9) - Classics
+1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) - Classics
+1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) - Classics
+1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) - Classics
+1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) - Classics
+1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (9) - Classics
+1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) - Classics
+Debug: History for 1000 Mouse Minnie
+==========================
+History for 1000 Mouse Minnie:
+Borrow Mouse Minnie Good Morning Vietnam
+Borrow Mouse Minnie The Philadelphia Story
+Borrow Mouse Minnie Good Will Hunting
+Borrow Mouse Minnie The Philadelphia Story
+Borrow Mouse Minnie Harold and Maude
+Debug: History for 1111 Mouse Mickey
+==========================
+History for 1111 Mouse Mickey:
+Borrow Mouse Mickey A Clockwork Orange
+Borrow Mouse Mickey Harold and Maude
+Borrow Mouse Mickey The Maltese Falcon
+Borrow Mouse Mickey Holiday
+Debug: History for 5000 Frog Freddie
+==========================
+History for 5000 Frog Freddie:
+Borrow Frog Freddie Harold and Maude
+Return Frog Freddie Harold and Maude
+Borrow Frog Freddie Harold and Maude
+Return Frog Freddie Harold and Maude
+Borrow Frog Freddie Harold and Maude
+Return Frog Freddie Harold and Maude
+Borrow Frog Freddie Harold and Maude
+Debug: History for 8000 Wacky Wally
+==========================
+History for 8000 Wacky Wally:
+Borrow Wacky Wally You've Got Mail
+Return Wacky Wally You've Got Mail
+Borrow Wacky Wally Harold and Maude
+Borrow Wacky Wally Harold and Maude
+Borrow Wacky Wally National Lampoon's Animal House
+Debug: History for 8888 Pig Porky
+==========================
+History for 8888 Pig Porky:
+Borrow Pig Porky Annie Hall
+Return Pig Porky Annie Hall
+Borrow Pig Porky Annie Hall
+Return Pig Porky Annie Hall
+Borrow Pig Porky Annie Hall
+Borrow Pig Porky When Harry Met Sally
+Borrow Pig Porky Silence of the Lambs
+Borrow Pig Porky Dogfight
+Borrow Pig Porky Harold and Maude
+End testStoreFinal
+=====================================
+Done.
 =====================================================
 3. clang-tidy warnings are fixed
    FIX all warnings if there are any shown below
@@ -151,8 +267,8 @@ a.out: store_test.cpp:272: void testStoreFinal(): Assertion `!comedies.empty()' 
 [11/12] Processing file /home/cssuwbstudent/343-movies/main.cpp.
 184554 warnings generated.
 [12/12] Processing file /home/cssuwbstudent/343-movies/store_test.cpp.
-203893 warnings generated.
-Suppressed 203893 warnings (203893 in non-user code).
+203894 warnings generated.
+Suppressed 203894 warnings (203894 in non-user code).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
 =====================================================
 4. Checking formatting using clang-format tool
@@ -162,115 +278,39 @@ Running clang-format on ./BorrowCommand.cpp
 Running clang-format on ./Classic.cpp
 Running clang-format on ./Comedy.cpp
 Running clang-format on ./Customer.cpp
-23,25c23
-< int Customer::getID() const {
-<   return this->id;
-< }
----
-> int Customer::getID() const { return this->id; }
 Running clang-format on ./Drama.cpp
 Running clang-format on ./HistoryCommand.cpp
 Running clang-format on ./InventoryCommand.cpp
 Running clang-format on ./Movie.cpp
-8,10c8
-< std::string Movie::getTitle() const {
-<   return title;
-< }
----
-> std::string Movie::getTitle() const { return title; }
-15,17c13
-< std::string Movie::getDirector() const {
-<   return director;
-< }
----
-> std::string Movie::getDirector() const { return director; }
-22,24c18
-< char Movie::getGenre() const {
-<   return genre;
-< }
----
-> char Movie::getGenre() const { return genre; }
-29,31c23
-< int Movie::getStock() const {
-<   return stock;
-< }
----
-> int Movie::getStock() const { return stock; }
-36,38c28
-< int Movie::getBorrowed() const {
-<   return initialStock - stock;
-< }
----
-> int Movie::getBorrowed() const { return initialStock - stock; }
-43,45c33
-< int Movie::getYear() const {
-<   return year;
-< }
----
-> int Movie::getYear() const { return year; }
-71,73c59
-< bool Movie::isAvailable() const {
-<   return stock > 0;
-< }
-\ No newline at end of file
----
-> bool Movie::isAvailable() const { return stock > 0; }
-\ No newline at end of file
 Running clang-format on ./MovieStore.cpp
 Running clang-format on ./ReturnCommand.cpp
 Running clang-format on ./main.cpp
 Running clang-format on ./store_test.cpp
-8d7
-< #include "MovieStore.h"
-9a9
-> #include "MovieStore.h"
-386c386
-<   testStore2();  
----
->   testStore2();
 =====================================================
 5. Checking for memory leaks using g++
    FIX all memory leaks if there are any shown below
 =====================================================
-./run-full.sh: line 110: 36902 Aborted                 (core dumped) $EXEC_PROGRAM > /dev/null 2> /dev/null
 =====================================================
 6. Checking for memory leaks using valgrind
     If you get a message saying "definitely lost", fix it
     If you get a message saying "All heap blocks were freed -- no leaks are possible", you are good
 =====================================================
-./run-full.sh: line 129: 36955 Aborted                 (core dumped) valgrind --log-file="valgrind-output.txt" $EXEC_PROGRAM > /dev/null 2> /dev/null
-==36955== Memcheck, a memory error detector
-==36955== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==36955== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==36955== Command: ./a.out
-==36955== Parent PID: 36640
-==36955== 
-==36955== 
-==36955== Process terminating with default action of signal 6 (SIGABRT)
-==36955==    at 0x4C0DA6C: __pthread_kill_implementation (in /usr/lib64/libc.so.6)
-==36955==    by 0x4BC0685: raise (in /usr/lib64/libc.so.6)
-==36955==    by 0x4BAA832: abort (in /usr/lib64/libc.so.6)
-==36955==    by 0x4BAA75A: __assert_fail_base.cold (in /usr/lib64/libc.so.6)
-==36955==    by 0x4BB93C5: __assert_fail (in /usr/lib64/libc.so.6)
-==36955==    by 0x41E5D7: testStoreFinal() (store_test.cpp:272)
-==36955==    by 0x41F4D2: testAll() (store_test.cpp:388)
-==36955==    by 0x41C428: main (main.cpp:19)
-==36955== 
-==36955== HEAP SUMMARY:
-==36955==     in use at exit: 88,033 bytes in 31 blocks
-==36955==   total heap usage: 1,328 allocs, 1,297 frees, 217,367 bytes allocated
-==36955== 
-==36955== LEAK SUMMARY:
-==36955==    definitely lost: 0 bytes in 0 blocks
-==36955==    indirectly lost: 0 bytes in 0 blocks
-==36955==      possibly lost: 0 bytes in 0 blocks
-==36955==    still reachable: 88,033 bytes in 31 blocks
-==36955==         suppressed: 0 bytes in 0 blocks
-==36955== Rerun with --leak-check=full to see details of leaked memory
-==36955== 
-==36955== For lists of detected and suppressed errors, rerun with: -s
-==36955== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Sat Mar  7 19:56:42 UTC 2026
+==102880== Memcheck, a memory error detector
+==102880== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==102880== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==102880== Command: ./a.out
+==102880== Parent PID: 102556
+==102880== 
+==102880== 
+==102880== HEAP SUMMARY:
+==102880==     in use at exit: 0 bytes in 0 blocks
+==102880==   total heap usage: 1,441 allocs, 1,441 frees, 162,421 bytes allocated
+==102880== 
+==102880== All heap blocks were freed -- no leaks are possible
+==102880== 
+==102880== For lists of detected and suppressed errors, rerun with: -s
+==102880== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Sat Mar  7 21:49:27 UTC 2026
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command

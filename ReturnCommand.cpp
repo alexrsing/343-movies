@@ -49,19 +49,22 @@ Command *ReturnCommandFactory::createCommand(std::string data,
   // Use store parameter to look up movie and customer
   Customer *customer = store->getCustomer(customerID);
   if (customer == nullptr) {
-    std::cout << "Customer " << customerID << " not found" << std::endl;
+    std::cout << "Invalid customer ID " << customerID << ", discarding line: "
+              << " " << mediaType << " " << movieType << movieData << std::endl;
     return nullptr;
   }
 
   for (Movie *movie : store->getMovies(movieType)) {
-    // if this is the correct movie, return a new BorrowCommand object
+    // if this is the correct movie, return a new ReturnCommand object
     if (movie->isEqual(movieData)) {
       return new ReturnCommand(store, customer, movie);
     }
   }
 
   // data does not match customer or movie
-  std::cout << "Invalid return command data: " << data << std::endl;
+  std::cout << "Invalid movie " << " for customer " << customer->getLastName()
+            << " " << customer->getFirstName()
+            << ", discarding line: " << std::endl;
   return nullptr;
 }
 
@@ -90,6 +93,10 @@ void ReturnCommand::execute() {
   }
 
   // Attempt to return the movie and record the transaction
+  std::cout << "Debug: Return " << customer->getID() << " "
+            << customer->getLastName() << " " << customer->getFirstName()
+            << " ";
+  movie->print();
   if (store->returnMovie(customer, movie)) {
     customer->addTransaction('R', movie);
     return;

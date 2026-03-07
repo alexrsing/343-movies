@@ -44,6 +44,10 @@ void HistoryCommand::execute() {
     return;
   }
 
-  // Print this customers transaction history
+  // Print debug header and customer transaction history
+  std::cout << "Debug: History for " << customer->getID() << " "
+            << customer->getLastName() << " " << customer->getFirstName()
+            << std::endl;
+  std::cout << "==========================" << std::endl;
   customer->printTransactions();
 }

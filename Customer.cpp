@@ -22,6 +22,12 @@ Customer *CustomerFactory::makeCustomer(std::string data) {
 // Returns the customer's ID
 int Customer::getID() const { return this->id; }
 
+// Returns the customer's first name
+std::string Customer::getFirstName() const { return this->firstName; }
+
+// Returns the customer's last name
+std::string Customer::getLastName() const { return this->lastName; }
+
 // Adds a transaction to the customer's history
 void Customer::addTransaction(char key, Movie *movie) {
   transactions.emplace_back(key, movie);
@@ -49,12 +55,17 @@ bool Customer::hasBorrowed(Movie *movie) const {
 
 // Prints the customer's transaction history
 void Customer::printTransactions() const {
-  std::cout << "Transaction history for " << firstName << " " << lastName
-            << " (ID: " << id << "):" << std::endl;
+  std::cout << "History for " << id << " " << lastName << " " << firstName
+            << ":" << std::endl;
+
+  if (transactions.empty()) {
+    std::cout << "No history for " << lastName << " " << firstName << std::endl;
+    return;
+  }
 
   for (const auto &t : transactions) {
-    std::string action = (t.first == 'B') ? "Borrowed" : "Returned";
-    std::cout << "  - " << action << ": ";
-    t.second->print();
+    std::string action = (t.first == 'B') ? "Borrow" : "Return";
+    std::cout << action << " " << lastName << " " << firstName << " "
+              << t.second->getTitle() << std::endl;
   }
 }

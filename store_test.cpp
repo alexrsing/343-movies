@@ -36,6 +36,10 @@ void testStore1() {
 void testStore2(MovieStore &store) {
   cout << "Start testStore2" << endl;
 
+  // Populate inventory and customers from files
+  store.populateInventory("data4movies.txt");
+  store.populateCustomers("data4customers.txt");
+
   // Verify comedies (genre 'F') loaded if Comedy is compiled in
   vector<Movie *> &comedies = store.getMovies('F');
   if (!comedies.empty()) {
@@ -53,9 +57,6 @@ void testStore2(MovieStore &store) {
   if (!classics.empty()) {
     assert(classics.size() == 14);
   }
-
-  // Test populateCustomers
-  store.populateCustomers("data4customers.txt");
 
   // Verify known customers exist
   Customer *wally = store.getCustomer(8000);
@@ -120,9 +121,6 @@ void testStore2(MovieStore &store) {
     assert(haroldAndMaude != nullptr);
     assert(haroldAndMaude->getStock() == 10);
   }
-
-  // Test populateCommands (exercises all available command factories)
-  store.populateCommands("data4commands.txt");
 
   // Print inventory
   store.printInventory();
@@ -374,8 +372,6 @@ void testStoreFinal(MovieStore &store) {
 void testAll() {
   testStore1();
   MovieStore store;
-  store.populateInventory("data4movies.txt");
-  store.populateCustomers("data4customers.txt");
   testStore2(store);
   testStore3(store);
   testStoreFinal(store);

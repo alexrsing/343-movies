@@ -56,9 +56,9 @@ std::string Classic::getActorLast() const { return actorLast; }
 void Classic::print() const {
   // Month year, major actor first last, director, title, stock, genre
   // Ex. 1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
-  std::cout << getYear() << getMonth() << ", " << getActorFirst() << " "
+  std::cout << getYear() << " " << getMonth() << ", " << getActorFirst() << " "
             << getActorLast() << ", " << getDirector() << ", " << getTitle()
-            << "(" << getStock() << ") - " << getGenre() << std::endl;
+            << " (" << getStock() << ") - Classics" << std::endl;
 }
 
 // Checks if two classic movies represent the same movie

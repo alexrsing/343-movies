@@ -29,6 +29,12 @@ public:
   // Returns the customer's ID
   int getID() const;
 
+  // Returns the customer's first name
+  std::string getFirstName() const;
+
+  // Returns the customer's last name
+  std::string getLastName() const;
+
   // Adds a transaction to the customer's history
   void addTransaction(char key, Movie *movie);
 
