@@ -1,5 +1,11 @@
 #include "Classic.h"
+#include "MovieStore.h"
 #include <sstream>
+
+static bool registered = [] {
+  MovieStore::registerMovieFactory('C', 2, new ClassicMovieFactory());
+  return true;
+}();
 
 Movie *ClassicMovieFactory::makeMovie(std::string data) const {
   // format:

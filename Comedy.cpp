@@ -1,4 +1,10 @@
 #include "Comedy.h"
+#include "MovieStore.h"
+
+static bool registered = [] {
+  MovieStore::registerMovieFactory('F', 0, new ComedyMovieFactory());
+  return true;
+}();
 
 Movie *ComedyMovieFactory::makeMovie(std::string data) const {
   // format: "F, stock, director, title, year"

@@ -2,7 +2,11 @@
 #include "MovieStore.h"
 #include <sstream>
 
-// Factory constructor
+static bool registered = [] {
+  MovieStore::registerCommandFactory('I', new InventoryCommandFactory());
+  return true;
+}();
+
 InventoryCommandFactory::InventoryCommandFactory() {}
 
 Command *InventoryCommandFactory::createCommand(std::string /*data*/,

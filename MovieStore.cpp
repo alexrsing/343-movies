@@ -1,42 +1,52 @@
 #include "MovieStore.h"
-#include "BorrowCommand.h"
-#include "Classic.h"
-#include "Comedy.h"
-#include "Drama.h"
-#include "HistoryCommand.h"
-#include "InventoryCommand.h"
-#include "ReturnCommand.h"
 #include <algorithm>
 #include <fstream>
 
-MovieStore::MovieStore() {
-  // Register movie factories
-  movieFactories.insert('F', new ComedyMovieFactory());
-  genres.push_back('F');
-  movieFactories.insert('D', new DramaMovieFactory());
-  genres.push_back('D');
-  movieFactories.insert('C', new ClassicMovieFactory());
-  genres.push_back('C');
+// Static registry accessors
+std::map<char, MovieFactoryEntry> &MovieStore::getMovieRegistry() {
+  static std::map<char, MovieFactoryEntry> registry;
+  return registry;
+}
 
-  // Register command factories
-  commandFactories.insert('B', new BorrowCommandFactory());
-  commandFactories.insert('R', new ReturnCommandFactory());
-  commandFactories.insert('H', new HistoryCommandFactory());
-  commandFactories.insert('I', new InventoryCommandFactory());
+std::map<char, CommandFactory *> &MovieStore::getCommandRegistry() {
+  static std::map<char, CommandFactory *> registry;
+  return registry;
+}
+
+void MovieStore::registerMovieFactory(char code, int priority,
+                                      MovieFactory *factory) {
+  getMovieRegistry()[code] = {priority, factory};
+}
+
+void MovieStore::registerCommandFactory(char code, CommandFactory *factory) {
+  getCommandRegistry()[code] = factory;
+}
+
+MovieStore::MovieStore() {
+  // Copy movie factories from static registry, sorted by priority
+  std::vector<std::pair<int, char>> ordered;
+  for (const auto &entry : getMovieRegistry()) {
+    ordered.push_back({entry.second.priority, entry.first});
+  }
+  std::sort(ordered.begin(), ordered.end());
+
+  for (const auto &p : ordered) {
+    char code = p.second;
+    MovieFactory *factory = getMovieRegistry()[code].factory;
+    movieFactories.insert(code, factory);
+    genres.push_back(code);
+  }
+
+  // Copy command factories from static registry
+  for (const auto &entry : getCommandRegistry()) {
+    commandFactories.insert(entry.first, entry.second);
+  }
 
   // Register media types
   mediaTypes.push_back('D');
 }
 
 MovieStore::~MovieStore() {
-  // Delete movie factories
-  for (MovieFactory *f : movieFactories.values()) {
-    delete f;
-  }
-  // Delete command factories
-  for (CommandFactory *f : commandFactories.values()) {
-    delete f;
-  }
   // Delete movies in inventory
   for (const auto &movies : inventory.values()) {
     for (Movie *m : movies) {
@@ -51,18 +61,25 @@ MovieStore::~MovieStore() {
   for (Command *cmd : commands) {
     delete cmd;
   }
+  // Delete factories in static registries
+  for (auto &entry : getMovieRegistry()) {
+    delete entry.second.factory;
+  }
+  getMovieRegistry().clear();
+  for (auto &entry : getCommandRegistry()) {
+    delete entry.second;
+  }
+  getCommandRegistry().clear();
 }
 
 bool MovieStore::returnMovie(Customer *customer, Movie *movie) {
   // Check if the customer exists in the customers hash table
   if (!customers.contains(customer->getID())) {
-    // throw runtime error if customer does not exist
     throw std::runtime_error("Customer not found");
   }
 
   // Check if the movie exists in the inventory hash table
   if (!inventory.contains(movie->getGenre())) {
-    // throw runtime error if genre does not exist
     throw std::runtime_error("Genre not found");
   }
 
@@ -82,13 +99,11 @@ bool MovieStore::returnMovie(Customer *customer, Movie *movie) {
 bool MovieStore::borrowMovie(Customer *customer, Movie *movie) {
   // Check if the customer exists in the customers hash table
   if (!customers.contains(customer->getID())) {
-    // throw runtime error if customer does not exist
     throw std::runtime_error("Customer not found");
   }
 
   // Check if the genre exists in the inventory hash table
   if (!inventory.contains(movie->getGenre())) {
-    // throw runtime error if genre does not exist
     throw std::runtime_error("Genre not found");
   }
 
@@ -119,17 +134,11 @@ void MovieStore::printInventory() {
   }
 }
 
-/**
- * Populates this movieStore object inventory with movie data from specified
- * file.
- */
 void MovieStore::populateInventory(std::string filePath) {
   std::ifstream inputFile;
 
-  // Open the file
   inputFile.open(filePath);
 
-  // Check if the file opened successfully
   if (!inputFile.is_open()) {
     throw std::runtime_error("File cannot be opened");
   }
@@ -139,7 +148,6 @@ void MovieStore::populateInventory(std::string filePath) {
     if (data.empty()) {
       continue;
     }
-    // Read first char (genre) of data
     char genre = data.at(0);
 
     if (!movieFactories.contains(genre)) {
@@ -150,7 +158,6 @@ void MovieStore::populateInventory(std::string filePath) {
     MovieFactory *factory = movieFactories.get(genre);
     Movie *movie = factory->makeMovie(data);
 
-    // add movie to inventory
     if (inventory.contains(genre)) {
       inventory.get(genre).push_back(movie);
     } else {
@@ -168,17 +175,11 @@ void MovieStore::populateInventory(std::string filePath) {
   }
 }
 
-/**
- * Populates this movieStore object customers with movie data from specified
- * file.
- */
 void MovieStore::populateCustomers(std::string filePath) {
   std::ifstream inputFile;
 
-  // Open the file
   inputFile.open(filePath);
 
-  // Check if the file opened successfully
   if (!inputFile.is_open()) {
     throw std::runtime_error("File cannot be opened");
   }
@@ -195,10 +196,6 @@ void MovieStore::populateCustomers(std::string filePath) {
   inputFile.close();
 }
 
-/**
- * Populates this movieStore object commands with movie data from specified
- * file.
- */
 Customer *MovieStore::getCustomer(int id) {
   if (!customers.contains(id)) {
     return nullptr;
@@ -210,7 +207,6 @@ std::vector<Movie *> &MovieStore::getMovies(char genre) {
   try {
     return inventory.get(genre);
   } catch (const std::runtime_error &e) {
-    // if genre does not exist, return empty vector
     static std::vector<Movie *> empty;
     return empty;
   }
@@ -228,10 +224,8 @@ bool MovieStore::validMediaType(char type) const {
 void MovieStore::populateCommands(std::string filePath) {
   std::ifstream inputFile;
 
-  // Open the file
   inputFile.open(filePath);
 
-  // Check if the file opened successfully
   if (!inputFile.is_open()) {
     throw std::runtime_error("File cannot be opened");
   }
@@ -242,8 +236,6 @@ void MovieStore::populateCommands(std::string filePath) {
       continue;
     }
     char commandType = data.at(0);
-    // confirm that command type exists in commandFactories hash table - discard
-    // line if doesn't exist
     if (!commandFactories.contains(commandType)) {
       std::cout << "Unknown command type: " << commandType
                 << ", discarding line: " << data.substr(1) << std::endl;

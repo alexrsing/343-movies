@@ -3,7 +3,11 @@
 #include <iostream>
 #include <sstream>
 
-// Factory constructor
+static bool registered = [] {
+  MovieStore::registerCommandFactory('B', new BorrowCommandFactory());
+  return true;
+}();
+
 BorrowCommandFactory::BorrowCommandFactory() {}
 
 Command *BorrowCommandFactory::createCommand(std::string data,

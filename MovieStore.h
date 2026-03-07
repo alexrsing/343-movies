@@ -5,9 +5,15 @@
 #include "Customer.h"
 #include "Movie.h"
 #include "MyHashTable.h"
+#include <map>
 #include <string>
 #include <utility>
 #include <vector>
+
+struct MovieFactoryEntry {
+  int priority;
+  MovieFactory *factory;
+};
 
 class MovieStore {
 public:
@@ -26,6 +32,10 @@ public:
   std::vector<Movie *> &getMovies(char genre);
   bool validMediaType(char type) const;
 
+  static void registerMovieFactory(char code, int priority,
+                                   MovieFactory *factory);
+  static void registerCommandFactory(char code, CommandFactory *factory);
+
 private:
   MyHashTable<char, MovieFactory *> movieFactories;
   MyHashTable<char, CommandFactory *> commandFactories;
@@ -34,6 +44,9 @@ private:
   std::vector<Command *> commands;
   std::vector<char> genres;
   std::vector<char> mediaTypes;
+
+  static std::map<char, MovieFactoryEntry> &getMovieRegistry();
+  static std::map<char, CommandFactory *> &getCommandRegistry();
 };
 
 #endif
