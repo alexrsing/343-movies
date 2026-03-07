@@ -1,4 +1,4 @@
-Sat Mar  7 21:49:08 UTC 2026
+Sat Mar  7 22:06:30 UTC 2026
 Linux LinuxMachine 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
 uid=1000(cssuwbstudent) gid=1000(cssuwbstudent) groups=1000(cssuwbstudent),10(wheel)
 =====================================================
@@ -14,36 +14,36 @@ End testStore1
 Start testStore2
 Unknown movie type: Z, discarding line: , 10, Hal Ashby, Harold and Maude, Bud Cort 3 1971
 Unknown movie type: Z, discarding line: , 10, Frank Capra, It's a Wonderful Life, James Steward 11 1946
-Annie Hall, 1977, Woody Allen (10) - Comedy
-Fargo, 1996, Joel Coen (10) - Comedy
-National Lampoon's Animal House, 1978, John Landis (10) - Comedy
-Pirates of the Caribbean, 2000, Different Years (10) - Comedy
-Pirates of the Caribbean, 2003, Gore Verbinski (10) - Comedy
-Sleepless in Seattle, 1993, Nora Ephron (10) - Comedy
-When Harry Met Sally, 1989, Rob Reiner (10) - Comedy
-You've Got Mail, 1998, Nora Ephron (10) - Comedy
-Barry Levinson, Good Morning Vietnam, 1988 (10) - Drama
-Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) - Drama
-Clint Eastwood, Unforgiven, 1992 (10) - Drama
-Gus Van Sant, Good Will Hunting, 2000 (10) - Drama
-Jonathan Demme, Silence of the Lambs, 1991 (10) - Drama
-Nancy Savoca, Dogfight, 1991 (10) - Drama
-Phillippe De Broca, King of Hearts, 1967 (10) - Drama
-Steven Spielberg, Schindler's List, 1993 (10) - Drama
-1938 9, Cary Grant, George Cukor, Holiday (10) - Classics
-1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
-1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) - Classics
-1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) - Classics
-1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) - Classics
-1940 5, Cary Grant, George Cukor, The Philadelphia Story (10) - Classics
-1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10) - Classics
-1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (10) - Classics
-1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) - Classics
-1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) - Classics
-1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) - Classics
-1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) - Classics
-1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10) - Classics
-1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
+Annie Hall, 1977, Woody Allen (10) 0 out - Comedy
+Fargo, 1996, Joel Coen (10) 0 out - Comedy
+National Lampoon's Animal House, 1978, John Landis (10) 0 out - Comedy
+Pirates of the Caribbean, 2000, Different Years (10) 0 out - Comedy
+Pirates of the Caribbean, 2003, Gore Verbinski (10) 0 out - Comedy
+Sleepless in Seattle, 1993, Nora Ephron (10) 0 out - Comedy
+When Harry Met Sally, 1989, Rob Reiner (10) 0 out - Comedy
+You've Got Mail, 1998, Nora Ephron (10) 0 out - Comedy
+Barry Levinson, Good Morning Vietnam, 1988 (10) 0 out - Drama
+Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) 0 out - Drama
+Clint Eastwood, Unforgiven, 1992 (10) 0 out - Drama
+Gus Van Sant, Good Will Hunting, 2000 (10) 0 out - Drama
+Jonathan Demme, Silence of the Lambs, 1991 (10) 0 out - Drama
+Nancy Savoca, Dogfight, 1991 (10) 0 out - Drama
+Phillippe De Broca, King of Hearts, 1967 (10) 0 out - Drama
+Steven Spielberg, Schindler's List, 1993 (10) 0 out - Drama
+1938 9, Cary Grant, George Cukor, Holiday (10) 0 out - Classics
+1938 9, Katherine Hepburn, George Cukor, Holiday (10) 0 out - Classics
+1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) 0 out - Classics
+1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) 0 out - Classics
+1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) 0 out - Classics
+1940 5, Cary Grant, George Cukor, The Philadelphia Story (10) 0 out - Classics
+1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10) 0 out - Classics
+1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (10) 0 out - Classics
+1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) 0 out - Classics
+1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) 0 out - Classics
+1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) 0 out - Classics
+1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) 0 out - Classics
+1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10) 0 out - Classics
+1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) 0 out - Classics
 End testStore2
 =====================================
 Start testStore3
@@ -66,36 +66,36 @@ Invalid customer ID 1234, discarding line:  D C 2 1971 Malcolm McDowell
 Invalid movie  for customer Mouse Minnie, discarding line: 
 Invalid media type Z, discarding line:  Fargo, 1996
 Invalid movie  for customer Mouse Minnie, discarding line: 
-Annie Hall, 1977, Woody Allen (1) - Comedy
-Fargo, 1996, Joel Coen (10) - Comedy
-National Lampoon's Animal House, 1978, John Landis (10) - Comedy
-Pirates of the Caribbean, 2000, Different Years (10) - Comedy
-Pirates of the Caribbean, 2003, Gore Verbinski (10) - Comedy
-Sleepless in Seattle, 1993, Nora Ephron (10) - Comedy
-When Harry Met Sally, 1989, Rob Reiner (10) - Comedy
-You've Got Mail, 1998, Nora Ephron (10) - Comedy
-Barry Levinson, Good Morning Vietnam, 1988 (10) - Drama
-Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) - Drama
-Clint Eastwood, Unforgiven, 1992 (10) - Drama
-Gus Van Sant, Good Will Hunting, 2000 (10) - Drama
-Jonathan Demme, Silence of the Lambs, 1991 (10) - Drama
-Nancy Savoca, Dogfight, 1991 (10) - Drama
-Phillippe De Broca, King of Hearts, 1967 (10) - Drama
-Steven Spielberg, Schindler's List, 1993 (8) - Drama
-1938 9, Cary Grant, George Cukor, Holiday (10) - Classics
-1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
-1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) - Classics
-1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) - Classics
-1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) - Classics
-1940 5, Cary Grant, George Cukor, The Philadelphia Story (10) - Classics
-1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10) - Classics
-1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (10) - Classics
-1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) - Classics
-1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) - Classics
-1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) - Classics
-1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) - Classics
-1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10) - Classics
-1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
+Annie Hall, 1977, Woody Allen (1) 9 out - Comedy
+Fargo, 1996, Joel Coen (10) 0 out - Comedy
+National Lampoon's Animal House, 1978, John Landis (10) 0 out - Comedy
+Pirates of the Caribbean, 2000, Different Years (10) 0 out - Comedy
+Pirates of the Caribbean, 2003, Gore Verbinski (10) 0 out - Comedy
+Sleepless in Seattle, 1993, Nora Ephron (10) 0 out - Comedy
+When Harry Met Sally, 1989, Rob Reiner (10) 0 out - Comedy
+You've Got Mail, 1998, Nora Ephron (10) 0 out - Comedy
+Barry Levinson, Good Morning Vietnam, 1988 (10) 0 out - Drama
+Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) 0 out - Drama
+Clint Eastwood, Unforgiven, 1992 (10) 0 out - Drama
+Gus Van Sant, Good Will Hunting, 2000 (10) 0 out - Drama
+Jonathan Demme, Silence of the Lambs, 1991 (10) 0 out - Drama
+Nancy Savoca, Dogfight, 1991 (10) 0 out - Drama
+Phillippe De Broca, King of Hearts, 1967 (10) 0 out - Drama
+Steven Spielberg, Schindler's List, 1993 (8) 2 out - Drama
+1938 9, Cary Grant, George Cukor, Holiday (10) 0 out - Classics
+1938 9, Katherine Hepburn, George Cukor, Holiday (10) 0 out - Classics
+1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) 0 out - Classics
+1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) 0 out - Classics
+1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) 0 out - Classics
+1940 5, Cary Grant, George Cukor, The Philadelphia Story (10) 0 out - Classics
+1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10) 0 out - Classics
+1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (10) 0 out - Classics
+1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) 0 out - Classics
+1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) 0 out - Classics
+1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) 0 out - Classics
+1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) 0 out - Classics
+1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10) 0 out - Classics
+1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) 0 out - Classics
 Debug: History for 1000 Mouse Minnie
 ==========================
 History for 1000 Mouse Minnie:
@@ -108,90 +108,48 @@ Debug: History for 8000 Wacky Wally
 ==========================
 History for 8000 Wacky Wally:
 No history for Wacky Wally
-Debug: Borrow 8000 Wacky Wally You've Got Mail, 1998, Nora Ephron (10) - Comedy
-Debug: Borrow 1000 Mouse Minnie Barry Levinson, Good Morning Vietnam, 1988 (10) - Drama
-Debug: Borrow 1000 Mouse Minnie 1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (10) - Classics
-Debug: Borrow 2000 Duck Donald Sleepless in Seattle, 1993, Nora Ephron (10) - Comedy
-Debug: Borrow 4444 Moose Bullwinkle 1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (10) - Classics
-Debug: Borrow 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
-Debug: Return 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (9) - Classics
-Debug: Borrow 8888 Pig Porky Annie Hall, 1977, Woody Allen (1) - Comedy
-Debug: Borrow 1111 Mouse Mickey 1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (9) - Classics
-Debug: Borrow 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
-Debug: Return 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (9) - Classics
-Debug: Borrow 1000 Mouse Minnie Gus Van Sant, Good Will Hunting, 2000 (10) - Drama
-Debug: Borrow 2000 Duck Donald Phillippe De Broca, King of Hearts, 1967 (10) - Drama
-Debug: Return 4444 Moose Bullwinkle 1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (8) - Classics
-Debug: Borrow 1000 Mouse Minnie 1940 5, Cary Grant, George Cukor, The Philadelphia Story (10) - Classics
-Debug: Borrow 1111 Mouse Mickey 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (10) - Classics
-Debug: Borrow 1000 Mouse Minnie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (9) - Classics
-Debug: Borrow 8888 Pig Porky When Harry Met Sally, 1989, Rob Reiner (10) - Comedy
-Debug: Borrow 8888 Pig Porky Jonathan Demme, Silence of the Lambs, 1991 (10) - Drama
-Debug: Return 8000 Wacky Wally You've Got Mail, 1998, Nora Ephron (9) - Comedy
-Debug: Borrow 9999 Duck Daffy You've Got Mail, 1998, Nora Ephron (10) - Comedy
-Debug: Borrow 8000 Wacky Wally 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (8) - Classics
-Debug: Borrow 1111 Mouse Mickey 1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (10) - Classics
-Debug: Borrow 8000 Wacky Wally 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (7) - Classics
-Debug: Borrow 1111 Mouse Mickey 1938 9, Cary Grant, George Cukor, Holiday (10) - Classics
-Debug: Borrow 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (6) - Classics
-Debug: Borrow 8888 Pig Porky Nancy Savoca, Dogfight, 1991 (10) - Drama
-Debug: Borrow 7777 Spider Sammy Steven Spielberg, Schindler's List, 1993 (8) - Drama
-Debug: Return 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (5) - Classics
-Debug: Borrow 5000 Frog Freddie 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (6) - Classics
-Debug: Borrow 8000 Wacky Wally National Lampoon's Animal House, 1978, John Landis (10) - Comedy
-Debug: Borrow 8888 Pig Porky 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (5) - Classics
-Debug: Borrow 7777 Spider Sammy 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (4) - Classics
-Debug: Borrow 2000 Duck Donald 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (3) - Classics
-Debug: Borrow 2000 Duck Donald Nancy Savoca, Dogfight, 1991 (9) - Drama
-Debug: Borrow 9000 Lizard Larry Clint Eastwood, Unforgiven, 1992 (10) - Drama
-Debug: Borrow 9000 Lizard Larry Fargo, 1996, Joel Coen (10) - Comedy
-Debug: Borrow 2000 Duck Donald 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (2) - Classics
-Debug: Borrow 9000 Lizard Larry 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (1) - Classics
-Debug: Borrow 9000 Lizard Larry 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) - Classics
 ==========================
 Lizard Larry could NOT borrow Harold and Maude, out of stock: 
 ==========================
 Failed to execute command: Borrow Lizard Larry Harold and Maude
-Debug: Borrow 3333 Witch Wicked 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) - Classics
 ==========================
 Witch Wicked could NOT borrow Harold and Maude, out of stock: 
 ==========================
 Failed to execute command: Borrow Witch Wicked Harold and Maude
-Debug: Borrow 7777 Spider Sammy 1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) - Classics
 ==========================
 Spider Sammy could NOT borrow Harold and Maude, out of stock: 
 ==========================
 Failed to execute command: Borrow Spider Sammy Harold and Maude
-Annie Hall, 1977, Woody Allen (0) - Comedy
-Fargo, 1996, Joel Coen (9) - Comedy
-National Lampoon's Animal House, 1978, John Landis (9) - Comedy
-Pirates of the Caribbean, 2000, Different Years (10) - Comedy
-Pirates of the Caribbean, 2003, Gore Verbinski (10) - Comedy
-Sleepless in Seattle, 1993, Nora Ephron (9) - Comedy
-When Harry Met Sally, 1989, Rob Reiner (9) - Comedy
-You've Got Mail, 1998, Nora Ephron (9) - Comedy
-Barry Levinson, Good Morning Vietnam, 1988 (9) - Drama
-Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) - Drama
-Clint Eastwood, Unforgiven, 1992 (9) - Drama
-Gus Van Sant, Good Will Hunting, 2000 (9) - Drama
-Jonathan Demme, Silence of the Lambs, 1991 (9) - Drama
-Nancy Savoca, Dogfight, 1991 (8) - Drama
-Phillippe De Broca, King of Hearts, 1967 (9) - Drama
-Steven Spielberg, Schindler's List, 1993 (7) - Drama
-1938 9, Cary Grant, George Cukor, Holiday (9) - Classics
-1938 9, Katherine Hepburn, George Cukor, Holiday (10) - Classics
-1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) - Classics
-1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) - Classics
-1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) - Classics
-1940 5, Cary Grant, George Cukor, The Philadelphia Story (9) - Classics
-1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (9) - Classics
-1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (9) - Classics
-1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) - Classics
-1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) - Classics
-1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) - Classics
-1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) - Classics
-1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (9) - Classics
-1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) - Classics
+Annie Hall, 1977, Woody Allen (0) 10 out - Comedy
+Fargo, 1996, Joel Coen (9) 1 out - Comedy
+National Lampoon's Animal House, 1978, John Landis (9) 1 out - Comedy
+Pirates of the Caribbean, 2000, Different Years (10) 0 out - Comedy
+Pirates of the Caribbean, 2003, Gore Verbinski (10) 0 out - Comedy
+Sleepless in Seattle, 1993, Nora Ephron (9) 1 out - Comedy
+When Harry Met Sally, 1989, Rob Reiner (9) 1 out - Comedy
+You've Got Mail, 1998, Nora Ephron (9) 1 out - Comedy
+Barry Levinson, Good Morning Vietnam, 1988 (9) 1 out - Drama
+Barry Levinson, Same Director Good Morning Vietnam, 1988 (10) 0 out - Drama
+Clint Eastwood, Unforgiven, 1992 (9) 1 out - Drama
+Gus Van Sant, Good Will Hunting, 2000 (9) 1 out - Drama
+Jonathan Demme, Silence of the Lambs, 1991 (9) 1 out - Drama
+Nancy Savoca, Dogfight, 1991 (8) 2 out - Drama
+Phillippe De Broca, King of Hearts, 1967 (9) 1 out - Drama
+Steven Spielberg, Schindler's List, 1993 (7) 3 out - Drama
+1938 9, Cary Grant, George Cukor, Holiday (9) 1 out - Classics
+1938 9, Katherine Hepburn, George Cukor, Holiday (10) 0 out - Classics
+1939 2, Clark Gable, Victor Fleming, Gone With the Wind (10) 0 out - Classics
+1939 2, Vivien Leigh, Victor Fleming, Gone With the Wind (10) 0 out - Classics
+1939 7, Judy Garland, Victor Fleming, The Wizard of Oz (10) 0 out - Classics
+1940 5, Cary Grant, George Cukor, The Philadelphia Story (9) 1 out - Classics
+1940 5, Katherine Hepburn, George Cukor, The Philadelphia Story (9) 1 out - Classics
+1941 10, Humphrey Bogart, John Huston, The Maltese Falcon (9) 1 out - Classics
+1942 8, Humphrey Bogart, Michael Curtiz, Casablanca (10) 0 out - Classics
+1942 8, Ingrid Bergman, Michael Curtiz, Casablanca (10) 0 out - Classics
+1946 11, Donna Reed, Frank Capra, It's a Wonderful Life (10) 0 out - Classics
+1946 11, James Steward, Frank Capra, It's a Wonderful Life (10) 0 out - Classics
+1971 2, Malcolm McDowell, Stanley Kubrick, A Clockwork Orange (9) 1 out - Classics
+1971 3, Ruth Gordon, Hal Ashby, Harold and Maude (0) 10 out - Classics
 Debug: History for 1000 Mouse Minnie
 ==========================
 History for 1000 Mouse Minnie:
@@ -295,22 +253,22 @@ Running clang-format on ./store_test.cpp
     If you get a message saying "definitely lost", fix it
     If you get a message saying "All heap blocks were freed -- no leaks are possible", you are good
 =====================================================
-==102880== Memcheck, a memory error detector
-==102880== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==102880== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==102880== Command: ./a.out
-==102880== Parent PID: 102556
-==102880== 
-==102880== 
-==102880== HEAP SUMMARY:
-==102880==     in use at exit: 0 bytes in 0 blocks
-==102880==   total heap usage: 1,441 allocs, 1,441 frees, 162,421 bytes allocated
-==102880== 
-==102880== All heap blocks were freed -- no leaks are possible
-==102880== 
-==102880== For lists of detected and suppressed errors, rerun with: -s
-==102880== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Sat Mar  7 21:49:27 UTC 2026
+==114277== Memcheck, a memory error detector
+==114277== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==114277== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==114277== Command: ./a.out
+==114277== Parent PID: 113969
+==114277== 
+==114277== 
+==114277== HEAP SUMMARY:
+==114277==     in use at exit: 0 bytes in 0 blocks
+==114277==   total heap usage: 1,407 allocs, 1,407 frees, 161,789 bytes allocated
+==114277== 
+==114277== All heap blocks were freed -- no leaks are possible
+==114277== 
+==114277== For lists of detected and suppressed errors, rerun with: -s
+==114277== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Sat Mar  7 22:06:47 UTC 2026
 =====================================================
 To create an output.txt file with all the output from this script
 Run the below command
