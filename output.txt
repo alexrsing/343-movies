@@ -134,8 +134,11 @@ Running clang-format on ./Customer.cpp
 Running clang-format on ./Drama.cpp
 Running clang-format on ./HistoryCommand.cpp
 Running clang-format on ./InventoryCommand.cpp
+Running clang-format on ./HistoryCommand.cpp
+Running clang-format on ./InventoryCommand.cpp
 Running clang-format on ./Movie.cpp
 Running clang-format on ./MovieStore.cpp
+Running clang-format on ./ReturnCommand.cpp
 Running clang-format on ./ReturnCommand.cpp
 Running clang-format on ./main.cpp
 Running clang-format on ./store_test.cpp
