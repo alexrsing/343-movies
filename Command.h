@@ -44,6 +44,7 @@ public:
   MovieStore *getStore() const { return store; }
 
 private:
+// Reference to the MovieStore that the command will operate on
   MovieStore *store;
 };
 

@@ -2,12 +2,14 @@
 #include "MovieStore.h"
 
 static bool registered = [] {
+  // Registers the Comedy movie factory with the MovieStore
   MovieStore::registerMovieFactory('F', 0, new ComedyMovieFactory());
   return true;
 }();
 
+// Creates a Comedy movie object from a line of inventory input data
 Movie *ComedyMovieFactory::makeMovie(std::string data) const {
-  // format: "F, stock, director, title, year"
+  // Format: "F, stock, director, title, year"
   size_t pos = data.find(',');
 
   size_t start = pos + 2;
@@ -28,12 +30,14 @@ Movie *ComedyMovieFactory::makeMovie(std::string data) const {
   return new Comedy(stock, director, title, year);
 }
 
+// Displays comedy movie information including stock and year
 void Comedy::print() const {
   std::cout << "Comedy: " << getStock() << " in, " << getBorrowed() << " out, "
             << getDirector() << ", " << getTitle() << ", " << getYear()
             << std::endl;
 }
 
+// Checks if two comedy movies represent the same movie
 bool Comedy::isEqual(const Movie &other) const {
   if (getGenre() != other.getGenre()) {
     return false;
@@ -44,8 +48,9 @@ bool Comedy::isEqual(const Movie &other) const {
          getDirector() == otherComedy.getDirector();
 }
 
+// Checks if the movie matches search data from command input
 bool Comedy::isEqual(const std::string &data) const {
-  // expected format: " title, year"
+  // Expected format: " title, year"
   size_t pos = data.find(',');
   if (pos == std::string::npos) {
     return false;
@@ -57,6 +62,8 @@ bool Comedy::isEqual(const std::string &data) const {
   return getTitle() == title && getYear() == year;
 }
 
+// Defines sorting order for comedy movies
+// Sorted by title first, then by release year
 bool Comedy::operator>(const Movie &other) const {
   if (getGenre() != other.getGenre()) {
     throw std::invalid_argument("Cannot compare movies of different genres");
